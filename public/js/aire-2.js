@@ -49,7 +49,7 @@ $(function () {
 	function valid_input() {
 		var count=0;
 		inputElement.each(function (){
-			if( $(this).val() > 0)
+			if( $(this).val().length > 0)
 				count++;
 		});
 		
