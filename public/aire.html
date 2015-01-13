@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+    <title>Aire 3.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/animations.css" />
+    <link rel="stylesheet" href="css/aire.css">
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    
+</head>
+<body>    
+    <div class="inner-col">    
+        <div class="page page-pay on">
+            <div class="top-nav">
+                <div class="nav-profile pay1 on"></div>
+                <div class="nav-activity pay1 on"></div>
+                <div class="nav-cancel pay2"></div>
+            </div>
+            <!-- <div class="pay1 on"> -->
+            <div class="pay-inner-col">
+                <div class="balance hide on">
+                    <div>
+                        <p>USD Availability</p>
+                        <p><span>$</span><span>320</span></p>
+                    </div>
+                </div>
+                <div class="middle">
+                    <p>Name or email</p>
+                    <div class="simple-divider"></div>
+                    <p><span>$ 0.00</span><span>USD</span></p>
+                    <div class="simple-divider"></div>
+                    <p>Note</p>
+                    <div class="simple-divider"></div>
+                    <div id="name-btn"></div>
+                </div>
+                
+                <div class="footer-button"></div>
+                <div class="keypad"></div>
+            </div>
+
+            <!-- </div> -->
+
+            <!-- <div class="pay2">
+                <div class="balance-bar"></div>
+                <div class="middle-pay2"></div>
+            </div> -->
+        </div>
+
+        <div class="page page-profile">
+            <div class="profile-backbtn"></div>
+        </div>
+
+        <div class="page page-activity">
+            <div class="activity-backbtn"></div>
+        </div>
+
+        <div class="page page-balance">
+            <div class="balance-backbtn"></div>
+            <div class="deposit-btn"></div>
+            <div class="convert-btn"></div>
+        </div>
+
+        <div class="page page-deposit">
+            <div class="deposit-backbtn"></div>
+        </div>
+
+        <div class="page page-convert">
+            <div class="convert-backbtn"></div>
+            <div class="convert-container">
+                <div class="convert-drag-btn"></div>
+                <div class="drop-target"></div>
+            </div>
+        </div>
+        <div class="page page-confirm-convert">
+        </div>        
+    </div>
+
+    <script type="text/javascript" src="js/transition.js"></script>
+    <script>
+        
+        $('.convert-drag-btn').draggable({
+            axis:'x',
+            containment: ".convert-container",
+            revert: true,
+        });
+
+        $('.drop-target').droppable({
+            drop: function(){
+                nextPage({
+                    animation: 1,
+                    currPage: $('.page-convert'),
+                    nextPage: $('.page-confirm-convert')
+                });
+            }   
+        });
+
+    </script>
+</body>
+</html>
