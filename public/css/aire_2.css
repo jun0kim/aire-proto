@@ -716,7 +716,7 @@ div #aire-pay-input #input-currency {
 	color: #888;
 }
 
-#balance .property.empty {
+#balance .property.empty .amount {
 	color: #777;
 }
 

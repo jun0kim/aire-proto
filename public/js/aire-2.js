@@ -73,6 +73,9 @@ $(function () {
 	selector.change(current_selector);
 
 	function current_selector() {
+		var index = selector.find('> option').index( selector.find('> option:selected'));
+		console.log(index);
+		console.log(selector.find('> option:selected'));
 		console.log($('select[name=currency] option:selected').text());
 
 	}
