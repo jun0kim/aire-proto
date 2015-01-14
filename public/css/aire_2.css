@@ -601,34 +601,41 @@ div #aire-pay-input #input-currency {
 }
 #activity .nav{
 	border-bottom: 1px solid #cfcfcf;
+	background-color: #fff;
+}
+
+#activity a {
+	top: 18px;
+	left: 18px;
 }
 
 #activity .nav span {
 	text-align: center;
 	display: block;
 	text-shadow: none;
+	padding-top: 16px;
+}
+
+.content {
+	padding:0 16px;
 }
 
 .content .transactions {
 	height: 60px;
+	margin: 16px 0;
 }
 
-.content .photo {
+.content .transactions .photo {
 	background-size: 48px 48px;
 	width: 48px;
 	height: 48px;
-	display: inline-block;
+	position: absolute;
+	background-image: url('../images/photo-anon.png');
 }
 
-.content .photo-container {
-	display: inline-block;
-	width: 20%;
-}
 .content .container {
-	display: inline-block;
-	width: 75%;
+	margin-left: 60px;
 	border-bottom: 1px solid #cfcfcf;
-	
 }
 
 .content .container ul{
@@ -636,11 +643,19 @@ div #aire-pay-input #input-currency {
 	padding: 0;
 	color: #333;
 	margin: 5px 0;
+}
 
+.content .container ul li {
+	margin:5px 0;
+}
+
+.content .container ul li div {
+	display: inline-block;
 }
 
 .content .container .email {
-
+	font-size: 14px;
+	color: #555;
 }
 
 .content .container .amount {
@@ -648,14 +663,18 @@ div #aire-pay-input #input-currency {
 }
 
 .content .container .text {
-	
+	font-size: 12px;
+	color: #777;
 }
 
 .content .container .date {
+	font-size: 12px;
+	color: #777;
 	float: right;
+	margin-top: 6px;
 }
 .content .one .photo {
-	background-image: url('../images/photo-anon.png');
+	
 }
 
 /* Balance Page*/
