@@ -3,6 +3,7 @@ $(function () {
 	var cancel = $('#nav-cancel');
 	var balance = $('#current-balance').text();
 	var airepay_btn = $('#aire-pay > .actions');
+	var convert_inputElement = $('#convert input');
 
 	inputElement.each(function () {
 		$(this).focus(function() {
@@ -18,8 +19,17 @@ $(function () {
 		});
 	});
 
-	cancel.on("click", clear_input);
+	convert_inputElement.each(function () {
+		$(this).focus(function() {
+			$('#convert').addClass('focused');
+		});
 
+		$(this).blur(function() {
+			$('#convert').removeClass('focused');
+		});
+	});
+
+	cancel.on("click", clear_input);
 	$('#pay-btn').click(clear_input);
 	$('#input-value').on("blur", function() {
 		balance_animation();
@@ -57,6 +67,14 @@ $(function () {
 		else{
 			airepay_btn.removeClass("on");
 		}
+	}
+	var selector = $('select[name=currency]');
+
+	selector.change(current_selector);
+
+	function current_selector() {
+		console.log($('select[name=currency] option:selected').text());
+
 	}
 
 

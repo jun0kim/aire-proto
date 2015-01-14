@@ -149,6 +149,7 @@ div #aire-pay-balance {
 	transition: height 600ms cubic-bezier(0.23, 1, 0.32, 1),width 600ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+
 #remaining-balance {
 	display: none;
 	background-color: #fff;
@@ -784,8 +785,16 @@ div #aire-pay-input #input-currency {
 	height: 125px;
 	background-color: #efefef;
 	text-align: center;
+	transform: translate3d(0, 0, 0.1px);
+	-webkit-transform: translate3d(0, 0, 0.1px);
+	-webkit-transition: height 600ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.focused#convert .current-balance {
+	height: 10px;
+	padding: 0;
+	overflow: hidden;
+}
 
 #convert .current-balance ul {
 	list-style: none;
@@ -810,6 +819,27 @@ div #aire-pay-input #input-currency {
 	margin-right: 5px;
 }
 
+#convert-remaining-balance {
+	display: none;
+	background-color: #fff;
+}
+
+.focused #convert-remaining-balance {
+	display: block;
+}
+
+#convert-remaining-balance p {
+	font-size: 12px;
+	color: #3ecec9;
+	text-shadow: none;
+	margin: 0;
+	padding:5px 0 0 23px;
+}
+
+#convert-remain-balance::before {
+	content: '€';
+	margin:0 2px;
+}
 
 #convert .convert-input {
 	background-color: #fff;
