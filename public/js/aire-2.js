@@ -20,8 +20,6 @@ $(function () {
 
 	cancel.on("click", clear_input);
 
-	
-
 	$('#pay-btn').click(clear_input);
 	$('#input-value').on("blur", function() {
 		balance_animation();
