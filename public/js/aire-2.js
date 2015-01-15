@@ -11,9 +11,10 @@ $(function () {
 	var friend_list = $('#aire-pay .friends-list ul li');
 
 
-	$('#start').bind("tap", function() {
+	setTimeout(function() {
 		$.mobile.changePage("#info-1",{transition: "slide"});
-	});
+	}, 3000);
+
 	$('#info-1').bind("tap", function() {
 		$.mobile.changePage("#info-2",{transition: "slide"});
 	});
@@ -58,10 +59,12 @@ $(function () {
 	});
 
 	cancel.on("click", clear_input);
+
 	$('#pay-btn').click(function (){
 		clear_input();
 		set_currency_pay_success();
 		set_saved_money();
+		set_balance();
 	});
 	$('#input-value').on("blur", function() {
 		balance_animation();
@@ -73,6 +76,12 @@ $(function () {
 		symbol.removeClass();
 		symbol.addClass(pay_currency);
 	});
+
+	function set_balance() {
+		balance = balance - pay_input_balance;	
+		$('#current-balance').text(balance);
+		$('#remain-balance').text(balance);
+	}
 
 	function set_saved_money() {
 		var money_str = currency_symbol[pay_currency] + (pay_input_balance/10).toFixed(1);
@@ -97,7 +106,7 @@ $(function () {
 
 	function balance_animation() {
 		pay_input_balance = $('#input-value').val();
-		var percent = (balance - pay_input_balance) / balance;				
+		var percent = (balance - pay_input_balance) / balance;		
 		percent = percent * 100 +'%';
 		$('#aire-pay-balance').css("width",percent);
 		$('#remain-balance').text(balance-pay_input_balance);
