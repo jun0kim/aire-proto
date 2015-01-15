@@ -1,3 +1,5 @@
+
+
 $(function () {
 	var inputElement = $('.sending-input');
 	var cancel = $('#nav-cancel');
@@ -11,9 +13,7 @@ $(function () {
 	var friend_list = $('#aire-pay .friends-list ul li');
 
 
-	setTimeout(function() {
-		$.mobile.changePage("#info-1",{transition: "slide"});
-	}, 3000);
+	
 
 	$('#info-1').bind("tap", function() {
 		$.mobile.changePage("#info-2",{transition: "slide"});
@@ -237,3 +237,8 @@ $(function () {
 	
 });
 
+$(document).ready(function (){
+	setTimeout(function() {
+		$.mobile.changePage("#info-1",{transition: "slide"});
+	}, 3000);
+});
