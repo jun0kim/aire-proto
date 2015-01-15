@@ -71,6 +71,17 @@ a {
 	position: relative;
 }
 
+
+/* Start */
+
+#start {
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-image: url('../images/aire-logo.png');
+	background-size: 129px 44.5px;
+	background-position: 50% 50%;
+}
+
 /*aire pay*/
 #aire-pay {
 	background-color: #fff;
@@ -630,12 +641,37 @@ div #aire-pay-input #input-currency {
 	width: 48px;
 	height: 48px;
 	position: absolute;
+	
+}
+
+.content .transactions:nth-child(1) .photo {
+	background-image: url('../images/photo-anon.png');
+}
+
+.content .transactions:nth-child(2) .photo {
+	background-image: url('../images/friend-1.png');
+}
+
+.content .transactions:nth-child(3) .photo {
+	background-image: url('../images/friend-2.png');
+}
+
+.content .transactions:nth-child(4) .photo {
+	background-image: url('../images/friend-3.png');
+}
+
+.content .transactions:nth-child(5) .photo {
+	background-image: url('../images/friend-4.png');
+}
+
+.content .transactions:nth-child(6) .photo {
 	background-image: url('../images/photo-anon.png');
 }
 
 .content .container {
 	margin-left: 60px;
 	border-bottom: 1px solid #cfcfcf;
+	padding-bottom: 5px;
 }
 
 .content .container ul{
@@ -660,6 +696,34 @@ div #aire-pay-input #input-currency {
 
 .content .container .amount {
 	float: right;
+	text-shadow: none;
+}
+
+.content .container .amount.usd {
+	color: #1ec5c0;
+}
+
+.content .container .amount.usd::before {
+	content: '$';
+	margin-right: 5px;
+}
+
+.content .container .amount.krw {
+	color: #96e4ca;
+}
+
+.content .container .amount.krw::before {
+	content: '₩';
+	margin-right: 5px;
+}
+
+.content .container .amount.btc {
+	color: #f99a87;
+}
+
+.content .container .amount.btc::before {
+	content: 'B';
+	margin-right: 5px;
 }
 
 .content .container .text {
@@ -864,6 +928,7 @@ div #aire-pay-input #input-currency {
 	position: absolute;
 	text-shadow: none;
 	font-size: 15px;
+	font-weight: 500;
 }
 
 .focused#convert .nav a {
@@ -1183,4 +1248,210 @@ div #aire-pay-input #input-currency {
 #convert-success .actions a:first-child {
 	border-right:solid;
 	border-width: 1px;
+}
+
+#withdraw {
+	background-color: #fff;
+}
+
+#withdraw .nav {
+	background-color: #fff;
+}
+
+#withdraw .nav a {
+	left: 15px;
+	top: 15px;
+}
+
+#withdraw .content {
+
+}
+
+#withdraw .input {
+	position: relative;
+	overflow: hidden;
+}
+
+#withdraw .input input[type="text"] {
+	border: none;
+	background-color: transparent;
+	border-radius: 0;
+	height: 38px;
+	width: 100%;
+	line-height: 38px;
+	font-size: 18px;
+	font-weight: 300;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	color: #33cc99;
+	padding-left: 15px;
+}
+
+#withdraw .input input[type="text"]:focus {
+	outline: none;
+	border-bottom: 1px solid #33cc99;
+}
+
+#withdraw .input input[type="text"][name="value"] + label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 38px;
+	line-height: 38px;
+	color: #33cc99;
+}
+
+#withdraw .input input[type="text"][name="value"]+ label::after {
+	content: 'B';
+}
+
+#withdraw .input input[type="text"].address {
+	font-size: 12px;
+	padding-left: 5px;
+}
+
+#withdraw .input input[type="text"][name="address"].address + label {
+	position: absolute;
+	top: 48px;
+	right: 0;
+	height: 30px;
+	width: 30px;
+	background-image: url('../images/qrcode.png');
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+
+#withdraw .content .rate {
+	text-align: center;
+	color: #999;
+	text-shadow: none;
+	font-size: 13px;
+	font-weight: 300;
+}
+
+#withdraw .help {
+	background-color: #f7f7f7;
+	text-align: left;
+	color: #cbcbcb;
+	text-shadow: none;
+	position: absolute;
+	left: 0;
+	bottom: 56px;
+	width: 100%;
+	padding-left: 16px;
+	font-weight: 200;
+	height: 150px;
+}
+
+#withdraw .help p {
+	margin: 22px 0;
+}
+
+#withdraw .actions {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: -webkit-flex;
+	height: 56px;
+	background: #dcf4e9;
+	color: #fff;
+	border: 0;
+}
+
+#withdraw .actions a{
+	width: 100%;
+	height: 31px;
+	background: #dcf4e9;
+	color: #33cc99;
+	font-size: 18px;
+	text-shadow: none;
+	box-shadow: none;
+	margin: auto 0;
+	padding-top: 8px;
+	font-weight: 200;
+}
+
+/*Deposit Page*/
+
+#deposit {
+	background-color: #fff;
+}
+
+#deposit .nav {
+	border-bottom: 1px solid #cfcfcf;
+	background-color: #fff;
+}
+
+#deposit .nav a {
+	top: 15px;
+	left: 90%;
+}
+
+#deposit .nav h1 {
+	text-shadow: none;
+	padding-top: 15px;
+}
+
+#deposit .address {
+	text-align: center;
+	text-shadow: none;
+}
+
+#deposit .address p:first-child {
+	font-size: 15px;
+	color: #a1a1a1;
+}
+
+#deposit .address p:last-child {
+	font-size: 13px;
+	color: #adadad;
+}
+#deposit .copy-address a {
+	width: 150px;
+	height: 30px;
+	display: block;
+	color: #fff;
+	background-color: #1ec68e;
+	margin: 0 auto;
+	text-shadow: none;
+	text-align: center;
+	padding-top: 10px;
+	font-weight: 200;
+}
+
+#deposit .qrcode {
+	background-image: url('../images/qrcode-big.png');
+	background-repeat: no-repeat;
+	background-size: 164px 164px;
+	background-position: center;
+	width: 100%;
+	height: 164px;
+}
+
+#deposit .content .rate {
+	text-align: center;
+	color: #999;
+	text-shadow: none;
+	font-size: 13px;
+	font-weight: 300;
+}
+
+#deposit .help {
+	background-color: #f7f7f7;
+	text-align: left;
+	color: #cbcbcb;
+	text-shadow: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding-left: 16px;
+	font-weight: 200;
+	height: 150px;
+	border: 0;
+}
+
+#deposit .help p {
+	margin: 22px 0;
 }

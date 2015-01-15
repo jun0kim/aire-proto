@@ -11,6 +11,10 @@
 	<script src="js/jquery.mobile-1.4.5.js"></script>
 </head>
 <body>
+
+	
+
+	<!-- Aire Pay page -->
 	<div data-role="page" id="aire-pay">
 		<div data-role="header" id="aire-pay-nav">
 			<a href="#profile" data-transition="slide" data-direction="reverse" class="ui-btn" id="nav-profile"></a>
@@ -67,6 +71,11 @@
 		</div>
 	</div>
 
+	<!-- Start Page -->
+	<div data-role="page" id="start">
+	</div>
+
+	<!-- Convert page -->
 	<div data-role="page" id="convert">
 		<div data-role="header" class="nav">
 			<a href="#balance" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn"></a>
@@ -127,8 +136,7 @@
 		</div>
 	</div>
 
-<!-- convert Success -->
-
+	<!-- convert Success -->
 	<div data-role="page" id="convert-success">
 		<div data-role="content" class="content">
 			<ul>
@@ -142,6 +150,8 @@
 			<a href="#" data-role="none" class="ui-btn">Send Receipt</a>
 		</div>
 	</div>
+
+	<!-- Balance Page -->
 	<div data-role="page" id="balance">
 		<div data-role="header" class="nav">
 			<a href="#aire-pay" data-role="none" data-transition="slidedown" class="crossback-btn ui-btn"></a>
@@ -209,15 +219,12 @@
 			</div>
 		</div>
 		<div data-role="footer" class="actions">
-			<a href="#" data-role="none" class="ui-btn">Deposit</a>
-			<a href="#" data-role="none" class="ui-btn">Withdraw</a>
+			<a href="#deposit" data-role="none" class="ui-btn" data-transition="slide" data-direction="reverse">Deposit</a>
+			<a href="#withdraw" data-role="none" class="ui-btn" data-transition="slide">Withdraw</a>
 		</div>
 	</div>
-		<!-- <div data-role="content" class="content">
-		</div>
-		<div data-role="footer" class="actions">
-		</div> -->
-	</div>
+		
+
 	<!-- Pay Success -->
 	<div data-role="page" id="pay-success">
 		<div data-role="content" class="content">
@@ -238,6 +245,63 @@
 
 	<!-- Withdraw page -->
 	<div data-role="page" id="withdraw">
+		<div data-role="header" class="nav">
+			<a href="#balance" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn"></a>
+			<h1>Withdraw</h1>
+		</div>
+		<div data-role="content" class="content">
+			<div class="input">
+				<form>
+					<input type="text" name="value" placeholder="0.00" value="0.19480323" data-enhanced="true" class="value withdraw-input"/>
+					<label></label>
+
+					<input type="text" name="address" placeholder="Address" value="17dec2zPk9trVhwxa3H9wEqyJMwsAeEA4yM" data-enhanced="true" class="address withdraw-input"/>
+					<label></label>
+
+				</form>
+			</div>
+
+			<div class="rate">
+				<p>Current exchange rate 1 BTC = 324.00 USD<br>(Source: www.xe.com)</p>
+			</div>
+		</div>
+		<div class="help">
+			<p>How can I withdraw funds?</p>
+			<p>How much is the fee?</p>
+			<p>How much bitcoin can I withdraw?</p>
+		</div>
+		<div data-role="footer" class="actions">
+			<a href="#" data-role="none" class="ui-btn">Withdraw</a>
+		</div>
+	</div>
+
+	<!-- Deposit page -->
+	<div data-role="page" id="deposit">
+		<div data-role="header" class="nav">
+			<h1>Deposit</h1>
+			<a href="#balance" data-transition="slide" class="ui-btn rightback-btn"></a>
+		</div>
+		
+		<div data-role="content" class="content">
+			<div class="address">
+				<p>Please send bitcoin to this address.</p>
+				<p>1keTK6M1VkYweLdvPJ49erWztSUFa54Sno</p>
+			</div>
+			<div class="copy-address">
+				<a href="" class="">Copy address</a>
+			</div>
+			<div class="qrcode">
+			</div>
+			<div class="rate">
+				<p>Current exchange rate 1 BTC = 324.00 USD<br>(Source: www.xe.com)</p>
+			</div>
+		</div>
+
+		<div data-role="footer" class="help">
+			<p>How can I deposit funds?</p>
+			<p>Where can I get bitcoin?</p>
+			<p>How long does it take to get deposited?</p>
+		</div>
 
 	</div>
 	<!-- Profile-->
@@ -297,7 +361,7 @@
 		</div>
 
 		<div data-role="content" class="content">
-
+			
 			<div class="transactions">
 				<div class="photo"></div>
 				<div class="container">
@@ -353,7 +417,7 @@
 						<ul>
 							<li>
 								<div class="email">Haejin Lee</div>
-								<div class="amount">30</div>
+								<div class="amount usd">30</div>
 							</li>
 							<li>
 								<div class="text">Lunchun</div>
@@ -369,7 +433,7 @@
 						<ul>
 							<li>
 								<div class="email">Hugo Ahlberg</div>
-								<div class="amount">18.50</div>
+								<div class="amount usd">18.50</div>
 							</li>
 							<li>
 								<div class="text">Books</div>
@@ -385,7 +449,7 @@
 						<ul>
 							<li>
 								<div class="email">Tobias Powell</div>
-								<div class="amount">65.20</div>
+								<div class="amount usd">65.20</div>
 							</li>
 							<li>
 								<div class="text">amazon order</div>
