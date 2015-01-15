@@ -1568,6 +1568,10 @@ div #aire-pay-input #input-currency {
 	font-weight: 300;
 }
 
+#friend-using-aire .friends-list {
+	border: 0;
+}
+
 #friend-using-aire .friends-list .title {
 	border-bottom: 1px solid #dedede;
 }
@@ -1578,6 +1582,10 @@ div #aire-pay-input #input-currency {
 	padding-left: 15px;
 	color: #333;
 	margin:20px 0 5px 0;
+}
+
+#friend-using-aire .friends-list {
+	border: 0;
 }
 
 #friend-using-aire .friends-list ul {
