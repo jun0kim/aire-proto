@@ -262,7 +262,8 @@ div #aire-pay-input input:focus {
 	font-weight: 200;
 	font-size: 16px;
 }
-.friends-list ul li .photo {
+
+#aire-pay-input.friends-list ul li .photo {
 	height: 28px;
 	width: 28px;
 	background-size: 28px 28px;
@@ -272,19 +273,19 @@ div #aire-pay-input input:focus {
 	right: 0;
 }
 
-.friends-list ul li:nth-child(1) .photo {
+#aire-pay-input.friends-list ul li:nth-child(1) .photo {
 	background-image: url('../images/friend-1.png');
 }
 
-.friends-list ul li:nth-child(2) .photo {
+#aire-pay-input.friends-list ul li:nth-child(2) .photo {
 	background-image: url('../images/friend-2.png');
 }
 
-.friends-list ul li:nth-child(3) .photo {
+#aire-pay-input.friends-list ul li:nth-child(3) .photo {
 	background-image: url('../images/friend-3.png');
 }
 
-.friends-list ul li:nth-child(4) .photo {
+#aire-pay-input.friends-list ul li:nth-child(4) .photo {
 	background-image: url('../images/friend-4.png');
 }
 
@@ -549,7 +550,7 @@ div #aire-pay-input #input-currency {
 	float: right;
 }
 
-#profile .middle .currency #set-currency {
+.settings .currency #set-currency {
 	position: absolute;
 	right: 11px;
 	border: none;
@@ -560,7 +561,7 @@ div #aire-pay-input #input-currency {
 	margin-top: 10px;
 }
 
-#profile .middle .ePIN .toggle {
+.settings .ePIN .toggle {
 	width: 100px;
 	display: inline-block;
 	position: absolute;
@@ -569,13 +570,13 @@ div #aire-pay-input #input-currency {
 	margin-top: 5px;
 }
 
-#profile .middle .ePIN .custom-class {
+.settings .ePIN .custom-class {
 	width: 44px;
 	border-radius: 20px;
 	border: 0;
 }
 
-#profile .middle .ePIN .ui-flipswitch-on {
+.settings .ePIN .ui-flipswitch-on {
 	background-color: #fff !important;
 	box-shadow-color: #33cc99;
 }
@@ -851,8 +852,19 @@ div #aire-pay-input #input-currency {
 	height:3px;
 	background-color: #1c9b72;
 	margin-left: 40px;
-	width: 40%;
 	top: -5px;
+}
+
+#balance .euro .property-container .balance-bar {
+	width: 20%;
+}
+
+#balance .usd .property-container .balance-bar {
+	width: 40%;
+}
+
+#balance .bitcoin .property-container .balance-bar {
+	width: 30%;
 }
 
 #balance .property-container .click-btn {
@@ -1455,3 +1467,283 @@ div #aire-pay-input #input-currency {
 #deposit .help p {
 	margin: 22px 0;
 }
+
+
+/* Info Pages*/
+
+.info .container {
+	background-color: #1ec68e;
+	background-repeat: no-repeat;
+	height: 360px;
+}
+
+.info .container ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	width: 27px;
+	padding-top: 10px;
+}
+
+.info .container ul li {
+	display: inline-block;
+	height: 6px;
+	width: 6px;
+	background-color: #333;
+	border-radius: 3px;
+	opacity: 0.3;
+}
+
+.info .container ul li.on{
+	opacity: 1;
+}
+
+.info .text {
+	text-align: center;
+	padding-top: 30px;
+}
+
+#info-1 .container {
+	background-image: url('../images/walkthrough-1.png');
+	background-size: 194px 303px;
+	background-position: 50% 105%;
+}
+
+#info-2 .container {
+	background-image: url('../images/walkthrough-2.png');
+	background-size: 194px 303px;
+	background-position: 50% 105%;
+}
+
+#info-3 .container {
+	background-image: url('../images/walkthrough-3.png');
+	background-size: 134px 51px;
+	background-position: 50% 55%;
+}
+
+#info-3 .text {
+	padding-top:0;
+}
+
+#info-3 .text p:first-child {
+	color: #999;
+	font-size: 11px;
+	text-shadow: none;
+}
+
+#info-3 .text .info-btn {
+	display: block;
+	text-shadow: none;
+	font-size: 14px;
+	height: 30px;
+	width: 270px;
+	padding-top: 11px;
+	text-align: center;
+	margin: 10px auto;
+	font-weight: 400;
+	border-radius: 3px;
+}
+
+#info-3 .text .facebook-btn {
+	background-color: #5b7fdf;
+	color: #fff;
+}
+
+#info-3 .text .email-btn {
+	background-color: #f3f3f3;
+	color: #646464;
+}
+
+#info-3 .text p:last-child {
+	font-size: 14px;
+	color: #888;
+	text-shadow: none;
+}
+
+#friend-using-aire .header h1{
+	text-align: center;
+	font-size: 24px;
+	color: #33cc99;
+	text-shadow: none;
+	font-weight: 300;
+}
+
+#friend-using-aire .friends-list .title {
+	border-bottom: 1px solid #dedede;
+}
+
+#friend-using-aire .friends-list .title p {
+	font-size: 15px;
+	text-shadow: none;
+	padding-left: 15px;
+	color: #333;
+	margin:20px 0 5px 0;
+}
+
+#friend-using-aire .friends-list ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#friend-using-aire .friends-list ul li {
+	padding-left: 15px;
+	margin: 8px auto;
+	overflow: scroll;
+}
+
+#friend-using-aire .friends-list ul li .photo{
+	display: inline-block;
+	height: 35px;
+	width: 35px;
+	background-size: 35px 35px;
+	background-repeat: no-repeat;
+}
+
+#friend-using-aire .friends-list ul li:nth-child(1) .photo {
+	background-image: url('../images/friend-1.png');	
+}
+
+#friend-using-aire .friends-list ul li:nth-child(2) .photo {
+	background-image: url('../images/friend-2.png');	
+}
+
+#friend-using-aire .friends-list ul li:nth-child(3) .photo {
+	background-image: url('../images/friend-3.png');	
+}
+
+#friend-using-aire .friends-list ul li:nth-child(4) .photo {
+	background-image: url('../images/friend-4.png');	
+}
+
+#friend-using-aire .friends-list ul li:nth-child(5) .photo {
+	background-image: url('../images/friend-1.png');	
+}
+
+#friend-using-aire .friends-list ul li:nth-child(6) .photo {
+	background-image: url('../images/friend-2.png');	
+}
+
+#friend-using-aire .friends-list ul li:nth-child(7) .photo {
+	background-image: url('../images/friend-4.png');	
+}
+
+#friend-using-aire .friends-list ul li:nth-child(8) .photo {
+	background-image: url('../images/friend-1.png');	
+}
+
+#friend-using-aire .friends-list ul li:nth-child(9) .photo {
+	background-image: url('../images/friend-3.png');	
+}
+
+#friend-using-aire .friends-list ul li .name{
+	display: inline-block;
+	padding-left: 10px;
+	position: relative;
+	top: -10px;
+	color: #666;
+	text-shadow: none;
+	font-weight: 300;
+	font-size: 15px;
+}
+
+#friend-using-aire .footer {
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	padding: 12px 0;
+	background-color: #33cc99;
+}
+
+#friend-using-aire .footer p {
+	margin: 5px auto;
+	color: #fff;
+	text-shadow: none;
+	font-size: 24px;
+	font-weight: 300;
+}
+
+#welcome .header h1 {
+	text-align: center;
+	text-shadow: none;
+	color: #33cc99;
+	font-weight: 300;
+	font-size: 24px;
+}
+
+#welcome .profile {
+	text-shadow: none;
+	text-align: center;
+}
+
+#welcome .profile .photo {
+	width: 101px;
+	height: 101px;
+	background-repeat: no-repeat;
+	background-image: url('../images/profile-2.png');
+	background-size: 101px 101px;
+	margin:0 auto;
+}
+
+#welcome .profile .name {
+	margin: 15px 0 25px;
+}
+
+#welcome .profile .name p {
+	margin: 5px 0;
+}
+
+#welcome .profile .name p:first-child {
+	font-size: 19px;
+	color: #333;
+}
+
+#welcome .profile .name p:last-child {
+	font-size: 11px;
+	color: #999;
+}
+
+#welcome .settings {
+	border-top: 1px solid #c9c9c9;
+	padding: 10px 20px;
+	color: #333;
+}
+
+#welcome .settings > div {
+	border-bottom: 1px solid #c9c9c9;
+	margin: 10px 0;
+	padding-bottom: 10px;
+}
+
+#welcome .settings .currency #set-currency {
+	margin-top: -10px;
+	float: right;
+}
+
+#welcome .settings .ePIN .toggle {
+	float: right;
+	position: inherit;
+	margin-right: -55px;
+	margin-top: -12px;
+}
+
+#welcome .footer {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 12px 0;
+	background-color: #33cc99;
+}
+
+#welcome .footer p {
+	margin:5px auto;
+	color: #fff;
+	text-shadow: none;
+	font-size: 24px;
+	font-weight: 300;
+}
+

@@ -10,6 +10,26 @@ $(function () {
 	}
 	var friend_list = $('#aire-pay .friends-list ul li');
 
+
+	$('#start').bind("tap", function() {
+		$.mobile.changePage("#info-1",{transition: "slide"});
+	});
+	$('#info-1').bind("tap", function() {
+		$.mobile.changePage("#info-2",{transition: "slide"});
+	});
+	$('#info-2').bind("tap", function() {
+		$.mobile.changePage("#info-3",{transition: "slide"});
+	});
+	$('#info-3').bind("tap", function() {
+		$.mobile.changePage("#friend-using-aire",{transition: "slide"});
+	});
+	$('#friend-using-aire .footer').bind("tap", function() {
+		$.mobile.changePage("#welcome",{transition: "slide"});
+	});
+	$('#welcome .footer').bind("tap", function() {
+		$.mobile.changePage("#aire-pay",{transition: "slide"});
+	});
+
 	inputElement.each(function () {
 		$(this).focus(function() {
 			$('#aire-pay').addClass('focused');
@@ -35,7 +55,7 @@ $(function () {
 		$('#aire-pay').removeClass('friends');
 		$('#pay-success .send-name').text($(this).val());
 	});
-	
+
 	cancel.on("click", clear_input);
 	$('#pay-btn').click(function (){
 		clear_input();

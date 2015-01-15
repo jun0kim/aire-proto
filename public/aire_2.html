@@ -12,7 +12,147 @@
 </head>
 <body>
 
+	<!-- Start Page -->
+	<div data-role="page" id="start">
+	</div>
+	<script>
+		$(function(){
+			
+		});
+	</script>
+	<!-- Aire info -->
+	<div data-role="page" id="info-1" class="info">
+		<div class="container">
+			<ul>
+				<li class="on"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="text">
+			<p><strong>Send</strong> money anywhere<br>for free and instantly</p>
+		</div>
+	</div>
+
+	<div data-role="page" id="info-2" class="info">
+		<div class="container">
+			<ul>
+				<li></li>
+				<li class="on"></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="text">
+			<p><strong>Change</strong> and <strong>hold</strong> money<br>without paying to your bank</p>
+		</div>
+	</div>
+
+	<div data-role="page" id="info-3" class="info">
+		<div class="container">
+			<ul>
+				<li></li>
+				<li></li>
+				<li class="on"></li>
+			</ul>
+		</div>
+		<div class="text">
+			<p>Don't worry, we will never post anything on your wall.</p>
+			<a href="" data-role="none" class="facebook-btn info-btn">Continue with Facebook</a>
+			<a href="" data-role="none" class="email-btn info-btn">Sign up using email</a>
+			<p>Have an account? <strong>Log in</strong></p>
+		</div>
+	</div>
 	
+	<!-- Friend using aire page -->
+	<div data-role="page" id="friend-using-aire">
+		<div class="header">
+			<h1>See who's using Aire</h1>
+		</div>
+		<div class="friends-list">
+			<div class="title">
+				<p>Friends on Aire (129)</p>
+			</div>
+
+			<ul class="friends">
+				<li>
+					<div class="photo"></div>
+					<div class="name">Haejin Lee</div>
+				</li>
+				<li>
+					<div class="photo"></div>
+					<div class="name">John Park</div>
+				</li>
+				<li>
+					<div class="photo"></div>
+					<div class="name">Jennifer Powell</div>
+				</li>
+				<li>
+					<div class="photo"></div>
+					<div class="name">Hugo Ahlberg</div>
+				</li>
+				<li>
+					<div class="photo"></div>
+					<div class="name">Jenny Lee</div>
+				</li>
+				<li>
+					<div class="photo"></div>
+					<div class="name">Solomon Park</div>
+				</li>
+				<li>
+					<div class="photo"></div>
+					<div class="name">Andie Herns</div>
+				</li>
+				<li>
+					<div class="photo"></div>
+					<div class="name">Nicola Hoff</div>
+				</li>
+				<li>
+					<div class="photo"></div>
+					<div class="name">James Smith</div>
+				</li>
+			</ul>
+		</div>
+		<div class="footer">
+			<p>Get Started</p>
+		</div>
+	</div>
+	
+	<!-- Welcome page -->
+	<div data-role="page" id="welcome">
+		<div class="header">
+			<h1>Welcome to Aire!</h1>
+		</div>
+		<div class="profile">
+			<div class="photo"></div>
+			<div class="name">
+				<p>Haejin Lee</p>
+				<p>hjlee@gmail.com</p>
+			</div>
+		</div>
+		<div class="settings">
+			<div class="currency">
+				<span>Default Currency</span>
+				<select id="set-currency" data-role="none">
+          <option>USD</option>
+          <option>KRW</option>
+          <option>BTC</option>
+        </select>
+			</div>
+			<div class="ePIN">
+				<span>Enable PIN</span>
+				  <div data-role="fieldcontain" class="toggle">
+				    <select id="select-based-flipswitch" data-role="flipswitch" data-wrapper-class="custom-class">
+				      <option value="leave"></option>
+				      <option value="arrive"></option>
+				    </select>
+				  </div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<p>Next</p>
+		</div>
+	</div>
 
 	<!-- Aire Pay page -->
 	<div data-role="page" id="aire-pay">
@@ -71,15 +211,12 @@
 		</div>
 	</div>
 
-	<!-- Aire info -->
-
+	
 
 
 	<div data-role="page" id="">
 	</div>
-	<!-- Start Page -->
-	<div data-role="page" id="start">
-	</div>
+	
 
 	<!-- Convert page -->
 	<div data-role="page" id="convert">
@@ -163,7 +300,7 @@
 			<a href="#aire-pay" data-role="none" data-transition="slidedown" class="crossback-btn ui-btn"></a>
 			<div class="message">
 				<p>Total Approx Balance</p>
-				<p>$ 406.15</p>
+				<p>$ 626.15</p>
 			</div>
 		</div>
 
@@ -184,7 +321,7 @@
 				<p>US Dollar</p>
 				<div class="property-container">
 					<div class="image"></div>
-					<div class="amount">100</div>
+					<div class="amount">320</div>
 					<div class="click-btn">></div>
 					<div class="balance-bar"></div>
 				</div>
