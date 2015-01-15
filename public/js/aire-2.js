@@ -8,6 +8,7 @@ $(function () {
 	var currency_symbol = {
 		"usd":"$", "jpy":"¥", "gbp":"€", "mxn":"$", "cny":"¥", "krw":"₩", "euro":"€", "btc":"B"
 	}
+	var friend_list = $('#aire-pay .friends-list ul li');
 
 	inputElement.each(function () {
 		$(this).focus(function() {
@@ -17,6 +18,16 @@ $(function () {
 			valid_input();
 		});
 	});
+
+	friend_list.each(function () {
+		$(this).click(function (){
+			var name_input = $('#aire-pay #row-friend input');
+			var name = $(this).find('> .name').text();
+
+			name_input.val(name);
+		});
+	});
+
 	$('#input-friend').focus( function (){
 		$('#aire-pay').addClass('friends');
 	})
@@ -24,7 +35,7 @@ $(function () {
 		$('#aire-pay').removeClass('friends');
 		$('#pay-success .send-name').text($(this).val());
 	});
-
+	
 	cancel.on("click", clear_input);
 	$('#pay-btn').click(function (){
 		clear_input();

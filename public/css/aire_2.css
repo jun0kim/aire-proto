@@ -247,7 +247,7 @@ div #aire-pay-input input[type="text"]:focus {
 }
 
 .friends #aire-pay-input .friends-list {
-	height: 120px;
+	height: 130px;
 }
 
 #aire-pay-input .friends-list ul {
@@ -257,15 +257,15 @@ div #aire-pay-input input[type="text"]:focus {
 }
 
 #aire-pay-input .friends-list ul li {
-	margin: 5px 0;
+	margin: 10px 0;
 	color: #666;
 	font-weight: 200;
 	font-size: 16px;
 }
 .friends-list ul li .photo {
-	height: 25px;
-	width: 25px;
-	background-size: 25px 25px;
+	height: 28px;
+	width: 28px;
+	background-size: 28px 28px;
 	background-repeat: no-repeat;
 	display: inline-block;
 	position: absolute;
