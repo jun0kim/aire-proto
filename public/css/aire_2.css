@@ -263,7 +263,7 @@ div #aire-pay-input input:focus {
 	font-size: 16px;
 }
 
-#aire-pay-input.friends-list ul li .photo {
+#aire-pay-input .friends-list ul li .photo {
 	height: 28px;
 	width: 28px;
 	background-size: 28px 28px;
@@ -273,19 +273,19 @@ div #aire-pay-input input:focus {
 	right: 0;
 }
 
-#aire-pay-input.friends-list ul li:nth-child(1) .photo {
+#aire-pay-input .friends-list ul li:nth-child(1) .photo {
 	background-image: url('../images/friend-1.png');
 }
 
-#aire-pay-input.friends-list ul li:nth-child(2) .photo {
+#aire-pay-input .friends-list ul li:nth-child(2) .photo {
 	background-image: url('../images/friend-2.png');
 }
 
-#aire-pay-input.friends-list ul li:nth-child(3) .photo {
+#aire-pay-input .friends-list ul li:nth-child(3) .photo {
 	background-image: url('../images/friend-3.png');
 }
 
-#aire-pay-input.friends-list ul li:nth-child(4) .photo {
+#aire-pay-input .friends-list ul li:nth-child(4) .photo {
 	background-image: url('../images/friend-4.png');
 }
 
@@ -1737,6 +1737,7 @@ div #aire-pay-input #input-currency {
 	bottom: 0;
 	padding: 12px 0;
 	background-color: #33cc99;
+
 }
 
 #welcome .footer p {

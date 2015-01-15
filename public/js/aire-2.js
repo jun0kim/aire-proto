@@ -45,6 +45,7 @@ $(function () {
 			var name = $(this).find('> .name').text();
 
 			name_input.val(name);
+			$('#input-value').focus();
 		});
 	});
 
@@ -138,11 +139,14 @@ $(function () {
 		});
 	});
 
-	$('#convert .convert-input .source').on("blur", function() {
+	$('#convert .convert-input .source').on("blur", function() {	
+	})
+	.on("input", function() {
+		calc_rate();
 		convert_animation();
 		calc_fee();
-	})
-	.on("input", calc_rate);
+		calc_remain();
+	});
 
 	$('#convert select').change(function (){
 		currency_to = $(this).find('> option:selected').attr('val');
@@ -214,6 +218,11 @@ $(function () {
 		var percent = (convert_balance - input_balance) / convert_balance;				
 		percent = percent * 100 +'%';
 		$('#convert .current-balance').css("width",percent);
+		
+	}
+
+	function calc_remain() {
+		var input_balance = $('#convert .convert-input .source').val();
 		$('#convert-remain-balance').text( (convert_balance-input_balance).toFixed(2) );
 	}
 	
