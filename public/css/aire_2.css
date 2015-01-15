@@ -71,6 +71,30 @@ a {
 	position: relative;
 }
 
+.currency-symbol.usd::after, .currency-symbol.mxn::after {
+	content: '$';
+}
+
+.currency-symbol.krw::after {
+	content: '₩';
+}
+
+.currency-symbol.btc::after {
+	content: 'Ƀ';
+}
+
+.currency-symbol.eur::before {
+	content: '€';
+}
+
+.currency-symbol.cny::before, .currency-symbol.jpy::before {
+	content: '¥';
+}
+
+.currency-symbol.gbp::before {
+	content: '￡';
+}
+
 
 /* Start */
 
@@ -307,7 +331,7 @@ div #aire-pay-input input[name="value"].usd + label {
 	color: #999;
 }
 
-div #aire-pay-input input[name="value"].usd + label.usd::after {
+div #aire-pay-input input[name="value"].usd + label.usd::after, div #aire-pay-input input[name="value"].usd + label.mxn::after {
 	content: '$';
 }
 
@@ -316,7 +340,19 @@ div #aire-pay-input input[name="value"].usd + label.krw::after {
 }
 
 div #aire-pay-input input[name="value"].usd + label.btc::after {
-	content: 'B';
+	content: 'Ƀ';
+}
+
+div #aire-pay-input input[name="value"].usd + label.eur::before {
+	content: '€';
+}
+
+div #aire-pay-input input[name="value"].usd + label.cny::before, div #aire-pay-input input[name="value"].usd + label.jpy::before {
+	content: '¥';
+}
+
+div #aire-pay-input input[name="value"].gbp::before {
+	content: '￡';
 }
 
 div #aire-pay-input #input-currency {
@@ -409,7 +445,7 @@ div #aire-pay-input #input-currency {
 }
 
 #pay-success .content ul li:first-child.btc::before {
-	content: 'B';
+	content: 'Ƀ';
 }
 
 #pay-success .content .confirm-btn {
@@ -477,7 +513,7 @@ div #aire-pay-input #input-currency {
 }
 
 #profile .identify .photo {
-	background-image: url('../images/profile-photo.png');
+	background-image: url('../images/profile-2.png');
 	height: 66px;
 	width: 62px;
 	background-size: 62px 66px;
@@ -646,11 +682,11 @@ div #aire-pay-input #input-currency {
 }
 
 .content .transactions:nth-child(1) .photo {
-	background-image: url('../images/photo-anon.png');
+	background-image: url('../images/friend-1.png');
 }
 
 .content .transactions:nth-child(2) .photo {
-	background-image: url('../images/friend-1.png');
+	background-image: url('../images/profile-2.png');
 }
 
 .content .transactions:nth-child(3) .photo {
@@ -723,7 +759,7 @@ div #aire-pay-input #input-currency {
 }
 
 .content .container .amount.btc::before {
-	content: 'B';
+	content: 'Ƀ';
 	margin-right: 5px;
 }
 
@@ -810,7 +846,7 @@ div #aire-pay-input #input-currency {
 	background-repeat: no-repeat;
 }
 
-.euro .image {
+.eur .image {
 	background-image: url('../images/euro.png');
 }
 
@@ -855,7 +891,7 @@ div #aire-pay-input #input-currency {
 	top: -5px;
 }
 
-#balance .euro .property-container .balance-bar {
+#balance .eur .property-container .balance-bar {
 	width: 20%;
 }
 
@@ -1071,7 +1107,7 @@ div #aire-pay-input #input-currency {
 	line-height: 44px;
 }
 
-#convert .convert-input label.euro::after {
+#convert .convert-input label.eur::after {
 	content: '€';
 }
 
@@ -1089,6 +1125,10 @@ div #aire-pay-input #input-currency {
 
 #convert .convert-input label.gbp::after {
 	content: '￡';
+}
+
+#convert .convert-input label.btc::after {
+	content: 'Ƀ';
 }
 
 #convert .convert-input select {
@@ -1208,7 +1248,7 @@ div #aire-pay-input #input-currency {
 	margin-right: 5px;
 }
 
-#convert-success .content ul li.euro::before {
+#convert-success .content ul li.eur::before {
 	content: '€';
 }
 
@@ -1226,6 +1266,10 @@ div #aire-pay-input #input-currency {
 
 #convert-success .content ul li.gbp::before {
 	content: '￡';
+}
+
+#convert-success .content ul li.btc::before {
+	content: 'Ƀ';
 }
 
 #convert-success .content p {
@@ -1314,7 +1358,7 @@ div #aire-pay-input #input-currency {
 }
 
 #withdraw .input input[name="value"]+ label::after {
-	content: 'B';
+	content: 'Ƀ';
 }
 
 #withdraw .input input.address {
@@ -1593,6 +1637,7 @@ div #aire-pay-input #input-currency {
 	padding: 0;
 	margin: 0;
 	overflow: scroll;
+	border: 0;
 }
 
 #friend-using-aire .friends-list ul li {
@@ -1726,7 +1771,18 @@ div #aire-pay-input #input-currency {
 	padding-bottom: 10px;
 }
 
-#welcome .settings .currency #set-currency {
+.settings .currency #default-currency {
+	position: absolute;
+	right: 11px;
+	border: none;
+	background: none;
+	height: 44px;
+	line-height: 44px;
+	color: #999;
+	margin-top: 10px;
+}
+
+#welcome .settings .currency #default-currency {
 	margin-top: -10px;
 	float: right;
 }

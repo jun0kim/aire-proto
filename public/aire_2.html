@@ -121,18 +121,23 @@
 		<div class="profile">
 			<div class="photo"></div>
 			<div class="name">
-				<p>Haejin Lee</p>
-				<p>hjlee@gmail.com</p>
+				<p>Lisa Lee</p>
+				<p>lisa@gmail.com</p>
 			</div>
 		</div>
 		<div class="settings">
 			<div class="currency">
 				<span>Default Currency</span>
-				<select id="set-currency" data-role="none">
-          <option>USD</option>
-          <option>KRW</option>
-          <option>BTC</option>
-        </select>
+				<select id="default-currency" data-role="none">
+	        <option val="usd">USD</option>
+	        <option val="eur">EUR</option>
+	        <option val="gbp">GBP</option>
+	        <option val="mxn">MXN</option>
+	        <option val="btc">BTC</option>
+	        <option val="jpy">JPY</option>
+	        <option val="cny">CNY</option>
+	        <option val="krw">KRW</option>
+	      </select>
 			</div>
 			<div class="ePIN">
 				<span>Enable PIN</span>
@@ -188,11 +193,16 @@
 
 	      <div id="row-value" class="row">
 	        <input type="number" id="input-value" name="value" placeholder="0.00" value="" class="usd sending-input" data-enhanced="true"/>
-	        <label for="input-value" class="usd"></label>
+	        <label for="input-value" class="currency-symbol usd"></label>
 	        <select id="input-currency" name="currency" data-role="none">
 	          <option val="usd">USD</option>
-	          <option val="krw">KRW</option>
+              <option val="eur">EUR</option>
+	          <option val="gbp">GBP</option>
+	          <option val="mxn">MXN</option>
 	          <option val="btc">BTC</option>
+	          <option val="jpy">JPY</option>
+	          <option val="cny">CNY</option>
+	          <option val="krw">KRW</option>
 	        </select>
 	      </div>
 	      <div id="row-note" class="row">
@@ -238,15 +248,16 @@
 				<form>
 		      <div class="row">
 		        <input type="number" name="source" placeholder="0.00" value="" data-enhanced="true" class="source transfer-input"/>
-		        <label class="euro"></label>
+		        <label class="eur"></label>
 		      </div>
 		      <div class="row">
 		        <input type="number" name="target" placeholder="0.00" value="" class="target transfer-input" data-enhanced="true"/>
-		        <label class="usd"></label>
+		        <label class="usd currency-symbol"></label>
 		        <select name="currency" data-role="none">
 		          <option val="usd">USD</option>
 		          <option val="gbp">GBP</option>
 		          <option val="mxn">MXN</option>
+		          <option val="btc">BTC</option>
 		          <option val="jpy">JPY</option>
 		          <option val="cny">CNY</option>
 		          <option val="krw">KRW</option>
@@ -279,7 +290,7 @@
 	<div data-role="page" id="convert-success">
 		<div data-role="content" class="content">
 			<ul>
-				<li id="convert-balance-src" class="euro">100</li>
+				<li id="convert-balance-src" class="eur">100</li>
 				<li>was converted to</li>
 				<li id="convert-balance-tar" class="usd">100</li>
 			</ul>
@@ -301,7 +312,7 @@
 		</div>
 
 		<div data-role="content" class="content">
-			<div class="property euro">
+			<div class="property eur">
 				<p>Euro</p>
 				<a href="#convert" data-role="none" data-transition="slide">
 					<div class="property-container">
@@ -371,7 +382,7 @@
 				<li id="confirm-balance" class="usd">50</li>
 				<li>was sent to <br><span class="send-name">Yoo Kyoung Noh<span></li>
 			</ul>
-			<a href="#aire-pay" data-transition="slide" data-direction="reverse"><div class="confirm-btn"></div></a>
+			<a href="#activity" data-transition="slide" data-direction="reverse"><div class="confirm-btn"></div></a>
 			<div>
 				<p>You saved <span class="saved-money">$5</span> through Aire!</p>
 			</div>
@@ -452,8 +463,8 @@
 		<div data-role="content" class="identify">
 			<div class="photo"></div>
 			<div class="name">
-				<p>Yoo Kyoung Noh</p>
-				<p>yknoh@korbit.co.kr</p>
+				<p>Lisa Lee</p>
+				<p>lisa@gmail.com</p>
 			</div>
 		</div>
 
@@ -469,10 +480,15 @@
 				<div class="currency">
 					<span>Default Currency</span>
 					<select id="set-currency" data-role="none">
-	              <option>USD</option>
-	              <option>KRW</option>
-	              <option>BTC</option>
-	            </select>
+            <option val="usd">USD</option>
+            <option val="eur">EUR</option>
+	          <option val="gbp">GBP</option>
+	          <option val="mxn">MXN</option>
+	          <option val="btc">BTC</option>
+	          <option val="jpy">JPY</option>
+	          <option val="cny">CNY</option>
+	          <option val="krw">KRW</option>
+          </select>
 				</div>
 				<div class="ePIN">
 					<span>Enable PIN</span>
@@ -506,8 +522,8 @@
 				<div class="container">
 					<ul>
 						<li>
-							<div class="email">yknoh@korbit.co.kr</div>
-							<div class="amount btc">0.233</div>
+							<div class="email">Jamie Lee</div>
+							<div class="amount usd">50</div>
 						</li>
 						<li>
 							<div class="text">Happy birthday</div>

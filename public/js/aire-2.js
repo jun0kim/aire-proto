@@ -4,16 +4,29 @@ $(function () {
 	var inputElement = $('.sending-input');
 	var cancel = $('#nav-cancel');
 	var pay_currency = 'usd';
+	var default_currency ='usd';
 	var balance = $('#current-balance').text();
 	var airepay_btn = $('#aire-pay > .actions');
-	var pay_input_balance;
+	var pay_input_balance=50;
 	var currency_symbol = {
-		"usd":"$", "jpy":"¥", "gbp":"€", "mxn":"$", "cny":"¥", "krw":"₩", "euro":"€", "btc":"B"
+		"usd":"$", "jpy":"¥", "gbp":"€", "mxn":"$", "cny":"¥", "krw":"₩", "eur":"€", "btc":"B"
 	}
 	var friend_list = $('#aire-pay .friends-list ul li');
 
 
+	$('#default-currency').change(function (){
+		default_currency = $(this).find('> option:selected').attr('val');
+
+		$("#profile #set-currency").find('option').each(function( i, opt ) {
+    		if( opt.value === default_currency.toUpperCase() ){
+        		$(opt).attr('selected', 'selected');	
+        	}
+		});
+	});
 	
+	$('#pay-success').bind("tap", function() {
+		$.mobile.changePage("#activity",{transition: "slide" ,direction: "reverse"});
+	});
 
 	$('#info-1').bind("tap", function() {
 		$.mobile.changePage("#info-2",{transition: "slide"});
@@ -72,8 +85,9 @@ $(function () {
 
 	$('#aire-pay select').change(function (){
 		pay_currency = $(this).find('> option:selected').attr('val');
-		var symbol = $('#aire-pay-input input[type="text"][name="value"].usd + label');
+		var symbol = $('#aire-pay-input input[name="value"].usd + label');
 		symbol.removeClass();
+		symbol.addClass('currency-symbol');
 		symbol.addClass(pay_currency);
 	});
 
@@ -133,10 +147,10 @@ $(function () {
 	var convert_inputElement = $('#convert input');
 	var convert_balance = $('#convert .current-balance .money').text();
 	var currency_to = 'usd';
-	var currency_from ='euro';
-
+	var currency_from ='eur';
+	var input_balance = 10;
 	var rate = {
-		"usd":1.18, "jpy":138.14, "gbp":0.78, "mxn":17.29, "cny":7.31, "krw":1275.89
+		"usd":1.18, "jpy":138.14, "gbp":0.78, "mxn":17.29, "cny":7.31, "krw":1275.89, "btc":0.005532
 	}
 	
 
@@ -161,6 +175,7 @@ $(function () {
 		currency_to = $(this).find('> option:selected').attr('val');
 		var symbol = $('#convert .convert-input input[name="target"] + label');
 		symbol.removeClass();
+		symbol.addClass('currency-symbol');
 		symbol.addClass(currency_to);
 		calc_rate();
 		change_rate_text();
@@ -168,7 +183,27 @@ $(function () {
 		change_btn_to();
 	});
 
-	$('#convert-accept').click(convert_clear_input);
+	$('#convert-accept').click(function() {
+		set_convert_balance();
+		convert_clear_input();
+	});
+
+	function set_convert_balance(){
+		convert_balance = (convert_balance - input_balance).toFixed(2);
+		$('#balance .eur .amount').text(convert_balance);
+		$('#convert .current-balance .money').text(convert_balance);
+
+		if(currency_to == 'usd'){
+			var to_usd = $('#balance .usd .amount');
+			var amount_balance = $('#balance .usd .amount').text();
+			var amount_usd = to_usd.text();
+			var tar_usd = $('#convert .convert-input .target').val();
+
+			console.log(tar_usd);
+			amount_usd = (parseFloat(amount_usd) + parseFloat(tar_usd)).toFixed(2);
+			to_usd.text(amount_usd);
+		}
+	}
 
 	function change_btn_to() {
 		$('#convert .convert-btn .currency-to').text
@@ -177,7 +212,7 @@ $(function () {
 
 	function calc_fee() {
 		var total = $('#convert .convert-input .source').val();
-		var fee_str = currency_symbol['euro'] + ' ' + (total/100).toFixed(2);
+		var fee_str = currency_symbol['eur'] + ' ' + (total/100).toFixed(2);
 
 		$('#convert .fee').each(function() {
 			$(this).text(fee_str);
@@ -188,6 +223,7 @@ $(function () {
 	function change_rate_convert_success() {
 		var tar = $('#convert-balance-tar');
 		tar.removeClass();
+		tar.addClass('currency_symbol');
 		tar.addClass(currency_to);
 	}
 
@@ -205,7 +241,10 @@ $(function () {
 		var source = $('#convert .convert-input .source');
 		var target = $('#convert .convert-input .target');
 
-		target.val( (source.val() * rate[currency_to]).toFixed(2) );
+		if(currency_to == 'btc')
+			target.val( (source.val() * rate[currency_to]).toFixed(6) );
+		else
+			target.val( (source.val() * rate[currency_to]).toFixed(2) );
 		set_val_convert_success(source.val(), target.val());
 	}
 
@@ -223,7 +262,7 @@ $(function () {
 	}
 
 	function convert_animation() {
-		var input_balance = $('#convert .convert-input .source').val();
+		input_balance = $('#convert .convert-input .source').val();
 		var percent = (convert_balance - input_balance) / convert_balance;				
 		percent = percent * 100 +'%';
 		$('#convert .current-balance').css("width",percent);
@@ -237,8 +276,8 @@ $(function () {
 	
 });
 
-$(document).ready(function (){
-	setTimeout(function() {
-		$.mobile.changePage("#info-1",{transition: "slide"});
-	}, 3000);
-});
+// $(document).ready(function (){
+// 	setTimeout(function() {
+// 		$.mobile.changePage("#info-1",{transition: "slide"});
+// 	}, 3000);
+// });
