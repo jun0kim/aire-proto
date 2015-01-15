@@ -219,7 +219,7 @@ div #aire-pay-input {
 }
 
 
-div #aire-pay-input input[type="text"] {
+div #aire-pay-input input {
 	border: none;
 	background-color: transparent;
 	border-radius: 0;
@@ -233,7 +233,7 @@ div #aire-pay-input input[type="text"] {
 }
 
 
-div #aire-pay-input input[type="text"]:focus {
+div #aire-pay-input input:focus {
 	outline: none;
 	border-bottom: 1px solid #2BC58F;
 }
@@ -293,11 +293,11 @@ div #aire-pay-input input[type="text"]:focus {
 	overflow: hidden;
 }
 
- #aire-pay-input input[type="text"][name="value"] {
+ #aire-pay-input input[name="value"] {
 	padding-left: 1em;
 }
 
-div #aire-pay-input input[type="text"][name="value"].usd + label {
+div #aire-pay-input input[name="value"].usd + label {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -306,15 +306,15 @@ div #aire-pay-input input[type="text"][name="value"].usd + label {
 	color: #999;
 }
 
-div #aire-pay-input input[type="text"][name="value"].usd + label.usd::after {
+div #aire-pay-input input[name="value"].usd + label.usd::after {
 	content: '$';
 }
 
-div #aire-pay-input input[type="text"][name="value"].usd + label.krw::after {
+div #aire-pay-input input[name="value"].usd + label.krw::after {
 	content: '₩';
 }
 
-div #aire-pay-input input[type="text"][name="value"].usd + label.btc::after {
+div #aire-pay-input input[name="value"].usd + label.btc::after {
 	content: 'B';
 }
 
@@ -587,7 +587,7 @@ div #aire-pay-input #input-currency {
 }
 
 #profile .actions {
-	position: fixed;
+	position: absolute;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -1023,7 +1023,7 @@ div #aire-pay-input #input-currency {
 	margin-top: 10px;
 }
 
-#convert .convert-input input[type="text"] {
+#convert .convert-input input {
 	border: none;
 	background-color: transparent;
 	border-radius: 0;
@@ -1036,7 +1036,7 @@ div #aire-pay-input #input-currency {
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
-#convert .convert-input input[type="text"]:focus {
+#convert .convert-input input:focus {
 	outline: none;
 	border-bottom: 1px solid #3ecec9;
 }
@@ -1046,12 +1046,12 @@ div #aire-pay-input #input-currency {
 	overflow: hidden;
 }
 
-#convert .convert-input input[type="text"] {
+#convert .convert-input input {
 	padding-left: 1em;
 	color: #3ecec9;
 }
 
-#convert .convert-input input[type="text"] + label {
+#convert .convert-input input + label {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1272,7 +1272,7 @@ div #aire-pay-input #input-currency {
 	overflow: hidden;
 }
 
-#withdraw .input input[type="text"] {
+#withdraw .input input {
 	border: none;
 	background-color: transparent;
 	border-radius: 0;
@@ -1287,12 +1287,12 @@ div #aire-pay-input #input-currency {
 	padding-left: 15px;
 }
 
-#withdraw .input input[type="text"]:focus {
+#withdraw .input input:focus {
 	outline: none;
 	border-bottom: 1px solid #33cc99;
 }
 
-#withdraw .input input[type="text"][name="value"] + label {
+#withdraw .input input[name="value"] + label {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1301,16 +1301,16 @@ div #aire-pay-input #input-currency {
 	color: #33cc99;
 }
 
-#withdraw .input input[type="text"][name="value"]+ label::after {
+#withdraw .input input[name="value"]+ label::after {
 	content: 'B';
 }
 
-#withdraw .input input[type="text"].address {
+#withdraw .input input.address {
 	font-size: 12px;
 	padding-left: 5px;
 }
 
-#withdraw .input input[type="text"][name="address"].address + label {
+#withdraw .input input[name="address"].address + label {
 	position: absolute;
 	top: 48px;
 	right: 0;
