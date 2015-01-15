@@ -51,7 +51,7 @@
 	      </div>
 
 	      <div id="row-value" class="row">
-	        <input type="text" id="input-value" name="value" placeholder="0.00" value="" class="usd sending-input" data-enhanced="true"/>
+	        <input type="number" id="input-value" name="value" placeholder="0.00" value="" class="usd sending-input" data-enhanced="true"/>
 	        <label for="input-value" class="usd"></label>
 	        <select id="input-currency" name="currency" data-role="none">
 	          <option val="usd">USD</option>
@@ -104,11 +104,11 @@
 
 				<form>
 		      <div class="row">
-		        <input type="text" name="source" placeholder="0.00" value="" data-enhanced="true" class="source transfer-input"/>
+		        <input type="number" name="source" placeholder="0.00" value="" data-enhanced="true" class="source transfer-input"/>
 		        <label class="euro"></label>
 		      </div>
 		      <div class="row">
-		        <input type="text" name="target" placeholder="0.00" value="" class="target transfer-input" data-enhanced="true"/>
+		        <input type="number" name="target" placeholder="0.00" value="" class="target transfer-input" data-enhanced="true"/>
 		        <label class="usd"></label>
 		        <select name="currency" data-role="none">
 		          <option val="usd">USD</option>
@@ -258,7 +258,7 @@
 		<div data-role="content" class="content">
 			<div class="input">
 				<form>
-					<input type="text" name="value" placeholder="0.00" value="0.19480323" data-enhanced="true" class="value withdraw-input"/>
+					<input type="number" name="value" placeholder="0.00" value="0.19480323" data-enhanced="true" class="value withdraw-input"/>
 					<label></label>
 
 					<input type="text" name="address" placeholder="Address" value="17dec2zPk9trVhwxa3H9wEqyJMwsAeEA4yM" data-enhanced="true" class="address withdraw-input"/>
