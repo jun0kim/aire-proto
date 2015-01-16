@@ -34,13 +34,13 @@ $(function () {
 	$('#info-2').bind("tap swipeleft", function() {
 		$.mobile.changePage("#info-3",{transition: "slide"});
 	});
-	$('#info-2').bind("tap swiperight", function() {
+	$('#info-2').bind("swiperight", function() {
 		$.mobile.changePage("#info-1",{transition: "slide", direction:"reverse"});
 	});
 	$('#info-3').bind("tap", function() {
 		$.mobile.changePage("#friend-using-aire",{transition: "slide"});
 	});
-	$('#info-3').bind("tap swiperight", function() {
+	$('#info-3').bind("swiperight", function() {
 		$.mobile.changePage("#info-2",{transition: "slide", direction:"reverse"});
 	});
 	$('#friend-using-aire .footer').bind("tap", function() {
