@@ -286,6 +286,10 @@ $(function () {
 $(document).ready(function (){
 	// if( $('#start').hasClass('.ui-page-active'))
 	// 	console.log("fffff");
+
+	// while( !$('#start').hasClass('.ui-page-active') ){
+	// 	console.log('wtf!!');
+	// }
 	setTimeout(function() {
 		$.mobile.changePage("#info-1",{transition: "slide"});
 	}, 3000);

@@ -411,6 +411,8 @@ div #aire-pay-input #input-currency {
 	background-repeat: no-repeat;
 	text-shadow: none;
 	color: #fff;
+	background-position: 50% 50%;
+}
 }
 
 #pay-success .content {
@@ -1221,6 +1223,8 @@ div #aire-pay-input #input-currency {
 	background-repeat: no-repeat;
 	text-shadow: none;
 	color: #fff;
+	background-position: 50% 50%;
+}
 }
 
 #convert-success .content {
