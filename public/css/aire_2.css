@@ -406,7 +406,7 @@ div #aire-pay-input #input-currency {
 
 #pay-success {
 	text-align: center;
-	background-image: url('../images/confirmation-bg.png');
+	background-image: url('../images/pay-success-bg-2.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	text-shadow: none;
@@ -754,8 +754,17 @@ div #aire-pay-input #input-currency {
 	color: #1ec5c0;
 }
 
-.content .container .amount.usd::before {
+.content .container .amount.minus.usd {
+	color: #f7755c;
+}
+
+.content .container .amount.usd span::after {
 	content: '$';
+	margin-right: 5px;
+}
+
+.content .container .amount.minus.usd span::before {
+	content: '-';
 	margin-right: 5px;
 }
 
