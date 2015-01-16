@@ -28,14 +28,20 @@ $(function () {
 		$.mobile.changePage("#activity",{transition: "slide" ,direction: "reverse"});
 	});
 
-	$('#info-1').bind("tap", function() {
+	$('#info-1').bind("tap swiperight", function() {
 		$.mobile.changePage("#info-2",{transition: "slide"});
 	});
-	$('#info-2').bind("tap", function() {
+	$('#info-2').bind("tap swiperight", function() {
 		$.mobile.changePage("#info-3",{transition: "slide"});
+	});
+	$('#info-2').bind("tap swipeleft", function() {
+		$.mobile.changePage("#info-1",{transition: "slide", direction:"reverse"});
 	});
 	$('#info-3').bind("tap", function() {
 		$.mobile.changePage("#friend-using-aire",{transition: "slide"});
+	});
+	$('#info-3').bind("tap swipeleft", function() {
+		$.mobile.changePage("#info-2",{transition: "slide", direction:"reverse"});
 	});
 	$('#friend-using-aire .footer').bind("tap", function() {
 		$.mobile.changePage("#welcome",{transition: "slide"});
@@ -278,7 +284,8 @@ $(function () {
 });
 
 $(document).ready(function (){
-	if('#start'.hasClass('.ui-page-active'))
+	// if( $('#start').hasClass('.ui-page-active'))
+	// 	console.log("fffff");
 	setTimeout(function() {
 		$.mobile.changePage("#info-1",{transition: "slide"});
 	}, 3000);
