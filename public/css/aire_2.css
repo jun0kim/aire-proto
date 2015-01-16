@@ -772,7 +772,7 @@ div #aire-pay-input #input-currency {
 	color: #96e4ca;
 }
 
-.content .container .amount.krw::before {
+.content .container .amount.krw span::after {
 	content: '₩';
 	margin-right: 5px;
 }
@@ -781,7 +781,7 @@ div #aire-pay-input #input-currency {
 	color: #f99a87;
 }
 
-.content .container .amount.btc::before {
+.content .container .amount.btc span::after {
 	content: 'Ƀ';
 	margin-right: 5px;
 }
