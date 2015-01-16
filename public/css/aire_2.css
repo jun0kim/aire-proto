@@ -508,6 +508,7 @@ div #aire-pay-input #input-currency {
 
 #profile {
 	background-color: #fff;
+	font-weight: 300;
 }
 
 #profile .nav {
@@ -520,6 +521,10 @@ div #aire-pay-input #input-currency {
 	margin-top: 10px;
 	margin-left: 88%;
 	
+}
+
+#profile a {
+	font-weight: 300;
 }
 
 #profile .identify {
@@ -592,6 +597,7 @@ div #aire-pay-input #input-currency {
 	font-size: 15px;
 	color: #333;
 	display: inline-block;
+	font-weight: 300;
 }
 
 #profile .middle .friends a::after {
