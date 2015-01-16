@@ -278,6 +278,7 @@ $(function () {
 });
 
 $(document).ready(function (){
+	if('#start'.hasClass('.ui-page-active'))
 	setTimeout(function() {
 		$.mobile.changePage("#info-1",{transition: "slide"});
 	}, 3000);
