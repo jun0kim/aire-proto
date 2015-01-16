@@ -25,7 +25,7 @@ $(function () {
 	});
 	
 	$('#pay-success').bind("tap", function() {
-		$.mobile.changePage("#activity",{transition: "slide" ,direction: "reverse"});
+		$.mobile.changePage("#activity",{transition: "slide" ,reverse: true});
 	});
 
 	$('#info-1').bind("tap swipeleft", function() {
@@ -35,13 +35,13 @@ $(function () {
 		$.mobile.changePage("#info-3",{transition: "slide"});
 	});
 	$('#info-2').bind("swiperight", function() {
-		$.mobile.changePage("#info-1",{transition: "slide", direction:"reverse"});
+		$.mobile.changePage("#info-1",{transition: "slide", reverse: true});
 	});
 	$('#info-3').bind("tap", function() {
 		$.mobile.changePage("#friend-using-aire",{transition: "slide"});
 	});
 	$('#info-3').bind("swiperight", function() {
-		$.mobile.changePage("#info-2",{transition: "slide", direction:"reverse"});
+		$.mobile.changePage("#info-2",{transition: "slide", reverse: true });
 	});
 	$('#friend-using-aire .footer').bind("tap", function() {
 		$.mobile.changePage("#welcome",{transition: "slide"});
