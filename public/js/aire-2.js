@@ -276,8 +276,8 @@ $(function () {
 	
 });
 
-// $(document).ready(function (){
-// 	setTimeout(function() {
-// 		$.mobile.changePage("#info-1",{transition: "slide"});
-// 	}, 3000);
-// });
+$(document).ready(function (){
+	setTimeout(function() {
+		$.mobile.changePage("#info-1",{transition: "slide"});
+	}, 3000);
+});

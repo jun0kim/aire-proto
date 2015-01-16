@@ -1638,6 +1638,8 @@ div #aire-pay-input #input-currency {
 	margin: 0;
 	overflow: scroll;
 	border: 0;
+	text-shadow: none;
+	box-shadow: none
 }
 
 #friend-using-aire .friends-list ul li {
