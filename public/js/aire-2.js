@@ -68,16 +68,17 @@ $(function () {
 	})
 	.blur(function() {
 		$('#aire-pay').removeClass('friends');
-		$('#pay-success .send-name').text($(this).val());
 	});
 
 	cancel.on("click", clear_input);
 
 	$('#pay-btn').click(function (){
+		$('#pay-success .send-name').text($('#input-friend').val());
 		clear_input();
 		set_currency_pay_success();
 		set_saved_money();
 		set_balance();
+
 	});
 	$('#input-value').on("blur", function() {
 		balance_animation();

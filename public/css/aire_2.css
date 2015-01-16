@@ -71,7 +71,7 @@ a {
 	position: relative;
 }
 
-.currency-symbol.usd::after, .currency-symbol.mxn::after {
+/*.currency-symbol.usd::after, .currency-symbol.mxn::after {
 	content: '$';
 }
 
@@ -93,7 +93,7 @@ a {
 
 .currency-symbol.gbp::before {
 	content: '￡';
-}
+}*/
 
 
 /* Start */
@@ -436,7 +436,7 @@ div #aire-pay-input #input-currency {
 	margin-right: 5px;
 }
 
-#pay-success .content ul li:first-child.usd::before {
+#pay-success .content ul li:first-child.usd::before, #pay-success .content ul li:first-child.mxn::before {
 	content: '$';
 }
 
@@ -446,6 +446,18 @@ div #aire-pay-input #input-currency {
 
 #pay-success .content ul li:first-child.btc::before {
 	content: 'Ƀ';
+}
+
+#pay-success .content ul li:first-child.jpy::before, #pay-success .content ul li:first-child.cny::before {
+	content: '¥';
+}
+
+#pay-success .content ul li:first-child.eur::before {
+	content: '€';
+}
+
+#pay-success .content ul li:first-child.gbp::before {
+	content: '￡';
 }
 
 #pay-success .content .confirm-btn {
