@@ -266,6 +266,10 @@ div #aire-pay-balance {
 	padding: 25px 0;
 }
 
+#aire-pay-balance ul li {
+	margin: 5px 0;
+}
+
 #aire-pay-balance ul li:first-child {
 	font-size:20px;
 }
@@ -461,7 +465,6 @@ div #aire-pay-input #input-currency {
 	text-shadow: none;
 	color: #fff;
 	background-position: 50% 50%;
-}
 }
 
 #pay-success .content {
@@ -1294,7 +1297,6 @@ div #aire-pay-input #input-currency {
 	text-shadow: none;
 	color: #fff;
 	background-position: 50% 50%;
-}
 }
 
 #convert-success .content {

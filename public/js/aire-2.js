@@ -26,6 +26,8 @@ $(function () {
 	
 	$('#pay-success').bind("tap", function() {
 		$.mobile.changePage("#activity",{transition: "slide" ,reverse: true});
+		$('#pay-btn').attr("href","#");
+		$('#pay-btn').off("tap", pay_btn_clickEvent);
 	});
 
 	$('#info-1').bind("tap swipeleft", function() {
@@ -78,15 +80,7 @@ $(function () {
 
 	cancel.on("click", clear_input);
 
-	$('#pay-btn').click(function (){
-		$('#pay-success .send-name').text($('#input-friend').val());
-		clear_input();
-		set_currency_pay_success();
-		set_saved_money();
-		set_balance();
-
-	});
-	$('#input-value').on("blur", function() {
+	$('#input-value').on("input", function() {
 		balance_animation();
 	});
 
@@ -97,6 +91,14 @@ $(function () {
 		symbol.addClass('currency-symbol');
 		symbol.addClass(pay_currency);
 	});
+
+	function pay_btn_clickEvent() {
+		$('#pay-success .send-name').text($('#input-friend').val());
+		clear_input();
+		set_currency_pay_success();
+		set_saved_money();
+		set_balance();
+	}
 
 	function set_balance() {
 		balance = balance - pay_input_balance;	
@@ -142,13 +144,15 @@ $(function () {
 		});
 		if(count == 3){
 			airepay_btn.addClass("on");
+			$('#pay-btn').attr("href","#pay-success");
+			$('#pay-btn').on("tap", pay_btn_clickEvent);
 		}
 		else{
 			airepay_btn.removeClass("on");
+			$('#pay-btn').attr("href","#");
+			$('#pay-btn').off("tap", pay_btn_clickEvent);
 		}
 	}
-
-
 
 // convert //
 	var convert_inputElement = $('#convert input');
