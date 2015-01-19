@@ -433,7 +433,7 @@ div #aire-pay-input #input-currency {
 }
 
 #aire-pay .actions a{
-	width: 50%;
+	width: 49%;
 	height: 31px;
 	background: #ccc;
 	color: #fff;
@@ -710,6 +710,7 @@ div #aire-pay-input #input-currency {
 	font-size: 15px;
 	padding-top: 20px;
 	text-shadow: none;
+	text-align: center;
 }
 
 
