@@ -1,4 +1,51 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 body * {
 	font-family: 'Helvetica Neue', sans-serif;
 }
@@ -10,6 +57,10 @@ a {
 	text-decoration: none;
 	color: inherit;
 	font-weight: inherit;
+}
+
+h1 {
+	margin: 16px 0;
 }
 .nav {
 	height: 50px;
@@ -119,8 +170,6 @@ a {
 	text-shadow: none;
 }
 
-
-
 #nav-profile {
 	width: 23px;
 	height: 20px;
@@ -150,7 +199,7 @@ a {
 	background-repeat: no-repeat;
 	background-size: 46px 12px;
 	display: none;
-	top: 16px;
+	top: 13px;
 	left: 20px;
 	position: absolute;
 }
@@ -214,7 +263,7 @@ div #aire-pay-balance {
 }
 #aire-pay-balance ul {
 	list-style: none;
-	padding: 0;
+	padding: 25px 0;
 }
 
 #aire-pay-balance ul li:first-child {
@@ -421,11 +470,13 @@ div #aire-pay-input #input-currency {
 #pay-success .content ul {
 	list-style: none;
 	padding: 0;
+	margin: 16px 0;
 }
 
 #pay-success .content ul li:last-child {
 	font-size:23px;
 	font-weight: 100;
+	line-height: 32px;
 }
 
 #pay-success .content ul li:first-child {
@@ -739,7 +790,7 @@ div #aire-pay-input #input-currency {
 }
 
 .content .container ul li {
-	margin:5px 0;
+	margin: 10px 0;
 }
 
 .content .container ul li div {
@@ -837,7 +888,7 @@ div #aire-pay-input #input-currency {
 
 
 #balance .message p {
-	margin: 0;	
+	margin: 5px 0;	
 }
 
 #balance .message p:first-child {
@@ -858,6 +909,7 @@ div #aire-pay-input #input-currency {
 	color: #fff;
 	font-weight: 200;
 	border-bottom: 1px solid #333;
+	padding: 3px 0;
 }
 
 #balance .property p {
@@ -866,6 +918,7 @@ div #aire-pay-input #input-currency {
 	font-size: 14px;
 	padding-left: 3px;
 	padding-bottom: 5px;
+	margin: 5px 0;
 }
 
 #balance .property .image {
@@ -917,7 +970,7 @@ div #aire-pay-input #input-currency {
 	height:3px;
 	background-color: #1c9b72;
 	margin-left: 40px;
-	top: -5px;
+	top: -3px;
 }
 
 #balance .eur .property-container .balance-bar {
@@ -1049,6 +1102,7 @@ div #aire-pay-input #input-currency {
 	list-style: none;
 	padding: 0;
 	color: #cbcbcb;
+	padding: 20px 0;
 }
 
 #convert .current-balance ul li:first-child {
@@ -1350,6 +1404,10 @@ div #aire-pay-input #input-currency {
 	top: 15px;
 }
 
+#withdraw p {
+	margin: 15px 0;
+}
+
 #withdraw .content {
 
 }
@@ -1425,13 +1483,13 @@ div #aire-pay-input #input-currency {
 	left: 0;
 	bottom: 56px;
 	width: 100%;
-	padding-left: 16px;
 	font-weight: 200;
-	height: 150px;
+	height: 140px;
 }
 
 #withdraw .help p {
 	margin: 22px 0;
+	padding-left: 16px;
 }
 
 #withdraw .actions {
@@ -1465,6 +1523,9 @@ div #aire-pay-input #input-currency {
 	background-color: #fff;
 }
 
+#deposit p {
+	margin: 15px 0;
+}
 #deposit .nav {
 	border-bottom: 1px solid #cfcfcf;
 	background-color: #fff;
@@ -1533,14 +1594,14 @@ div #aire-pay-input #input-currency {
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	padding-left: 16px;
 	font-weight: 200;
-	height: 150px;
+	height: 140px;
 	border: 0;
 }
 
 #deposit .help p {
 	margin: 22px 0;
+	padding-left: 16px;
 }
 
 
@@ -1604,6 +1665,7 @@ div #aire-pay-input #input-currency {
 	color: #999;
 	font-size: 11px;
 	text-shadow: none;
+	margin: 11px 0;
 }
 
 #info-3 .text .info-btn {
@@ -1633,6 +1695,7 @@ div #aire-pay-input #input-currency {
 	font-size: 14px;
 	color: #888;
 	text-shadow: none;
+	margin: 14px 0;
 }
 
 #friend-using-aire .header h1{
@@ -1799,7 +1862,7 @@ div #aire-pay-input #input-currency {
 
 #welcome .settings > div {
 	border-bottom: 1px solid #c9c9c9;
-	margin: 10px 0;
+	margin: 15px 0;
 	padding-bottom: 10px;
 }
 
@@ -1815,7 +1878,7 @@ div #aire-pay-input #input-currency {
 }
 
 #welcome .settings .currency #default-currency {
-	margin-top: -10px;
+	margin-top: -15px;
 	float: right;
 }
 
@@ -1823,7 +1886,7 @@ div #aire-pay-input #input-currency {
 	float: right;
 	position: inherit;
 	margin-right: -55px;
-	margin-top: -12px;
+	margin-top: -15px;
 }
 
 #welcome .footer {
