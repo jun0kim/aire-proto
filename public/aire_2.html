@@ -53,9 +53,9 @@
 		</div>
 		<div class="text">
 			<p>Don't worry, we will never post anything on your wall.</p>
-			<a href="#friend-using-aire" data-role="none" class="facebook-btn info-btn">Continue with Facebook</a>
-			<a href="" data-role="none" class="email-btn info-btn">Sign up using email</a>
-			<a href="#sign-in" data-role="none"><p>Have an account? <strong>Log in</strong></p></a>
+			<a href="#friend-using-aire" data-role="none" class="facebook-btn info-btn" data-transition="slide">Continue with Facebook</a>
+			<a href="#sign-up" data-role="none" class="email-btn info-btn" data-transition="slide">Sign up using email</a>
+			<a href="#sign-in" data-role="none" data-transition="slide"><p>Have an account? <strong>Log in</strong></p></a>
 		</div>
 	</div>
 	
@@ -151,8 +151,96 @@
 		</div>
 
 		<div class="footer">
-			<p>Get Started</p>
+			<p>Next</p>
 		</div>
+	</div>
+
+	<!-- Sign Up Page -->
+	<div data-role="page" id="sign-up">
+		<div data-role="header" class="nav">
+			<a href="#info-3" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn">X</a>
+		</div>
+
+		<div data-role="content" class="content">
+			<form>
+	      <div class="row">
+	        <input type="text" name="email" placeholder="Email" value="" data-enhanced="true" data-prevent-focus-zoom="true"/>
+	      </div>
+	      <div class="row">
+	        <input type="password" name="password" placeholder="Password" value="" data-enhanced="true"/>
+	      </div>
+	      <div class="row">
+	        <input type="text" name="First-name" placeholder="First name" value="" data-enhanced="true"/>
+	      </div>
+	      <div class="row">
+	        <input type="text" name="Last-name" placeholder="Last name" value="" data-enhanced="true"/>
+	      </div>
+	    </form>
+			<a href="#email-verif" data-transition="slide" class="">Sign up</a>
+			<p>By signing up, you are agreeing to Aire's <u>User agreement</u> and <u>Privacy</u>.</p>
+		</div>
+	</div>
+
+	<!-- email verification Page -->
+
+	<div data-role="page" id="email-verif">
+		<div data-role="header" class="nav">
+			<a href="#info-3" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn">X</a>
+		</div>
+		<div data-role="content" class="content">
+			<p>Cool! We emailed you a code<br>at lisa@gmail.com</p>
+			<form>
+	      <div class="row">
+	        <input type="number" name="code" placeholder="Enter verification code here." value="" data-enhanced="true" data-prevent-focus-zoom="true"/>
+	      </div>
+	    </form>
+			<a href="#almost-done" data-transition="slide" class="">Next</a>
+			<a href="#" data-transition="slide" class="" style="background-color: #aaa;">Resend Verification Code</a>
+			<p>Didn't receive an email?<br>Please contact at info@airenow.com</p>
+		</div>
+	</div>
+
+	<!-- verify phone page -->
+	<div data-role="page" id="phone-verify-input">
+		<div data-role="header" class="nav">
+			<a href="#info-3" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn">X</a>
+		</div>
+		<div data-role="content" class="content">
+			<form>
+	      <div class="row">
+					<select name="country" data-role="none">
+						<option>대한민국 (Republic of Korea)</option>
+					</select>
+	      </div>
+	      <div class="row">
+	        <input type="number" name="code" placeholder="Enter verification code here." value="" data-enhanced="true" data-prevent-focus-zoom="true"/>
+	      </div>
+	    </form>
+			<a href="#" data-transition="slide" class="">Next</a>
+			<div class="message">
+				<p>Phone number will be used for identification purposes and to prevent misuse of the service. It will not be shown to other users. To use Aire, please verify using your phone number.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- verify phone code -->
+	<div data-role="page" id="phone-verify-code">
+		<div data-role="header" class="nav">
+			<a href="#info-3" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn">X</a>
+		</div>
+		<div data-role="content" class="content">
+			<p>Please enter the verification code sent via SMS.</p>
+			<form>
+	      <div class="row">
+	        <input type="number" name="code" placeholder="Enter verification code here." value="" data-enhanced="true" data-prevent-focus-zoom="true"/>
+	      </div>
+	    </form>
+			<a href="#" data-transition="slide" class="">Next</a>
+			<a href="#" data-transition="slide" class="" style="background-color: #aaa;">Resend Verification Code</a>
+			<p>Didn't receive a text message?<br>Please contact at info@airenow.com</p>
+		</div>
+
 	</div>
 
 	<!-- Sign In Page -->
@@ -174,6 +262,12 @@
 	    </form>
 			<a href="#" data-transition="slide" class="">Sign in</a>
 			<p>Forgot your password?</p>
+
+			<script>
+				$('#sign-in .content p').bind("tap", function() {
+					$.mobile.changePage("#forgot-pass",{transition: "slide"});
+				});
+			</script>
 		</div>
 	</div>
 
@@ -196,6 +290,54 @@
 		</div>
 	</div>
 
+	<!-- Almost done Page -->
+	
+	<div data-role="page" id="almost-done">
+		<div class="header">
+			<h1>You're almost done!</h1>
+		</div>
+		<div class="profile">
+			<div class="photo"></div>
+			<div class="name">
+				<p>Lisa Lee</p>
+				<p>lisa@gmail.com</p>
+			</div>
+		</div>
+		<div class="content">
+			<div class="message">
+				<p>By connecting your Facebook friends list to Aire, you can send money easily to your friends anywhere in the world.</p>
+			</div>
+			<div class="action">
+				<a href="#friend-using-aire" data-role="none" data-transition="slide">Connect to Facebook</a>
+				<p>Don't worry, we will never post anything on your wall.</p>
+			</div>
+			<div class="footer">
+				<a href="#welcome" data-role="none" data-transition="slide">Skip</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- start deposit -->
+	<div data-role="page" id="start-deposit">
+		<div data-role="content" class="content">
+			<div class="address">
+				<p>Please send bitcoin to this address.</p>
+				<p>1keTK6M1VkYweLdvPJ49erWztSUFa54Sno</p>
+			</div>
+			<div class="copy-address">
+				<a href="" class="">Copy address</a>
+			</div>
+			<div class="qrcode">
+			</div>
+			<div class="rate">
+				<p>Current exchange rate 1 BTC = 213.80 USD<br>(Source: www.xe.com)</p>
+			</div>
+		</div>
+		<div class="footer">
+			<p>Get Started</p>
+		</div>
+	</div>
+
 	<!-- Aire Pay page -->
 	<div data-role="page" id="aire-pay">
 		<div data-role="header" id="aire-pay-nav">
@@ -206,12 +348,12 @@
 		</div>
 
 		<div data-role="content" id="aire-pay-balance">
-			<a href="#balance" data-role="none" data-transition="slideup">
+			
 				<ul>
 					<li>USD Availability</li>
 					<li id="current-balance">320</li>
 				</ul>
-			</a>
+
 		</div>
 		
 		<div id="remaining-balance">
@@ -256,9 +398,10 @@
 				<a href="#" data-role="none" class="ui-btn">Request</a>
 				<a href="#" data-role="none" data-transition="slide" class="ui-btn" id="pay-btn">Pay</a>
 		</div>
-	</div>
 
-	
+		
+
+	</div>
 
 
 	<!-- Convert page -->
@@ -303,14 +446,15 @@
 		    </form>
 
 			</div>
+			<div class="exchange-rate">
+				<p>Current exchange rate 1 EUR = <span>1.18 USD</span><br>(Source: www.xe.com)</p>
+			</div>
 			<div class="convert-info">
 				<p>1% fee, <span class="fee"></span> was excluded<span class="icon"></span></p>
 			</div>
+
 			<div class="convert-btn">
 				<a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop">Convert EUR to <span class="currency-to">USD</span></a>
-			</div>
-			<div class="exchange-rate">
-				<p>Current exchange rate 1 EUR = <span>1.18 USD</span><br>(Source: www.xe.com)</p>
 			</div>
 
 			<div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:280px;">
@@ -405,12 +549,36 @@
 				</div>
 			</div>
 		</div>
-		<div data-role="footer" class="actions">
+		<!-- <div data-role="footer" class="actions">
 			<a href="#deposit" data-role="none" class="ui-btn" data-transition="slide" data-direction="reverse">Deposit</a>
 			<a href="#withdraw" data-role="none" class="ui-btn" data-transition="slide">Withdraw</a>
+		</div> -->
+
+		<div data-role="popup" id="convert-popup" data-dismissible="false" style="max-width:280px;">
+			<div role="main" class="ui-content">
+				<div class="symbol"></div>
+				<div class="text">
+					<p>Converting your Bitcoins to your preferred fiat currency can make your funds more stable as a store of value and more intuitive as a unit of account.
+					</p>
+				</div>
+				<div class="fee">
+					<p>A 1% fee will apply to each conversion.</p>
+				</div>
+				<div class="action">
+					<a href="#" data-role="none">Show me how it works</a>
+				</div>
+				<div class="not-show">
+					<div class="ui-checkbox">
+						<label for="popup-checkbox" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Do not show this again</label>
+						<input type="checkbox" id="popup-checkbox" data-corners="false" data-enhanced="true"></input>
+					</div>
+				</div>
+			</div>
 		</div>
+
 	</div>
 		
+	
 
 	<!-- Pay Success -->
 	<div data-role="page" id="pay-success">
@@ -433,7 +601,7 @@
 	<!-- Withdraw page -->
 	<div data-role="page" id="withdraw">
 		<div data-role="header" class="nav">
-			<a href="#balance" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn"></a>
+			<a href="#profile" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn"></a>
 			<h1>Withdraw</h1>
 		</div>
 		<div data-role="content" class="content">
@@ -466,7 +634,7 @@
 	<div data-role="page" id="deposit">
 		<div data-role="header" class="nav">
 			<h1>Deposit</h1>
-			<a href="#balance" data-transition="slide" class="ui-btn rightback-btn"></a>
+			<a href="#profile" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn"></a>
 		</div>
 		
 		<div data-role="content" class="content">
@@ -511,6 +679,12 @@
 				<a href="#" data-role="none" class="ui-btn">Invite</a>
 			</div>
 			<div class="middle">
+				<div class="deposit">
+					<a href="#deposit" data-role="none" data-transition="slide" class="ui-btn">Deposit Funds</a>
+				</div>
+				<div class="withdraw">
+					<a href="#withdraw" data-role="none" data-transition="slide" class="ui-btn">Withdraw Funds</a>
+				</div>
 				<div class="friends">
 					<a href="#" data-role="none" class="ui-btn">Friends</a>
 				</div>
@@ -570,92 +744,137 @@
 				</div>
 			</div>
 
+			<div class="transactions">
+				<div class="photo"></div>
+				<div class="container">
+					<ul>
+						<li>
+							<div class="email">me</div>
+							<div class="amount usd minus"><span></span>100</div>
+						</li>
+						<li>
+							<div class="text">USD to EUR</div>
+							<div class="date">5m</div>
+						</li>
+					</ul>
+				</div>
+			</div>
 
 			<div class="transactions">
 				<div class="photo"></div>
 				<div class="container">
-						<ul>
-							<li>
-								<div class="email">me</div>
-								<div class="amount usd"><span></span>100</div>
-							</li>
-							<li>
-								<div class="text">BTC to USD</div>
-								<div class="date">2h</div>
-							</li>
-						</ul>
-					</div>
+					<ul>
+						<li>
+							<div class="email">Jenny Park</div>
+							<div class="amount krw"><span></span>800,000</div>
+						</li>
+						<li>
+							<div class="text">rent</div>
+							<div class="date">1d</div>
+						</li>
+					</ul>
 				</div>
-
-				<div class="transactions">
-				<div class="photo"></div>
-				<div class="container">
-						<ul>
-							<li>
-								<div class="email">Jenny Park</div>
-								<div class="amount krw"><span></span>800,000</div>
-							</li>
-							<li>
-								<div class="text">rent</div>
-								<div class="date">Just now</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="transactions">
-				<div class="photo"></div>
-				<div class="container">
-						<ul>
-							<li>
-								<div class="email">Haejin Lee</div>
-								<div class="amount usd minus"><span></span>30</div>
-							</li>
-							<li>
-								<div class="text">Lunchun</div>
-								<div class="date">5m</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="transactions">
-				<div class="photo"></div>
-				<div class="container">
-						<ul>
-							<li>
-								<div class="email">Hugo Ahlberg</div>
-								<div class="amount usd"><span></span>18.50</div>
-							</li>
-							<li>
-								<div class="text">Books</div>
-								<div class="date">1d</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="transactions">
-				<div class="photo"></div>
-				<div class="container">
-						<ul>
-							<li>
-								<div class="email">Tobias Powell</div>
-								<div class="amount usd"><span></span>65.20</div>
-							</li>
-							<li>
-								<div class="text">amazon order</div>
-								<div class="date">2w</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-
-
-
-
 			</div>
+
+			<div class="transactions">
+				<div class="photo"></div>
+				<div class="container">
+					<ul>
+						<li>
+							<div class="email">Haejin Lee</div>
+							<div class="amount usd minus"><span></span>30</div>
+						</li>
+						<li>
+							<div class="text">Lunchun</div>
+							<div class="date">3d</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="transactions">
+				<div class="photo"></div>
+				<div class="container">
+					<ul>
+						<li>
+							<div class="email">me</div>
+							<div class="amount btc minus"><span></span>1.00</div>
+						</li>
+						<li>
+							<div class="text">Withdraw</div>
+							<div class="date">1w</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="transactions">
+				<div class="photo"></div>
+				<div class="container">
+					<ul>
+						<li>
+							<div class="email">me</div>
+							<div class="amount btc"><span></span>2.00</div>
+						</li>
+						<li>
+							<div class="text">Deposit</div>
+							<div class="date">2w</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="history-conversion" class="history">
+		<div data-role="header" class="nav">
+			<a href="#activity" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn"></a>
+			<h1>Currency Conversion</h1>
+		</div>
+		<div data-role="content" class="content">
+			<p class="date">2014. December 26 03:33:33 PM GMT +9</p>
+			<p class="amount">$100 was converted to €86.39</p>
+			<p class="fee">Currency conversion fee 1% ($1.00)</p>
+			<p class="text">This is applied when you convert your funds from one currency to another currency.</p>
+		</div>
+	</div>
+
+	<div data-role="page" id="history-deposit" class="history">
+		<div data-role="header" class="nav">
+			<a href="#activity" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn"></a>
+			<h1>Deposit</h1>
+		</div>
+		<div data-role="content" class="content">
+			<p class="date">2014. December 26 03:33:33 PM GMT +9</p>
+			<p class="amount">Ƀ2.00 was deposited to your account.</p>
+			<p>Transaction ID</p>
+			<p>348943759740578rewr33334378950704932755</p>
+
+		</div>
+	</div>
+
+	<div data-role="page" id="history-withdraw" class="history">
+		<div data-role="header" class="nav">
+			<a href="#activity" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn"></a>
+			<h1>Withdraw</h1>
+		</div>
+		<div data-role="content" class="content">
+			<p class="date">2014. December 26 03:33:33 PM GMT +9</p>
+			<p class="amount">Ƀ1.00 was withdrawn from your account.</p>
+			<p>Bitcoin address</p>
+			<p>1keTK6M1VkYweLdvPJ49erWztSUFa54Sno</p>
+		</div>
+	</div>
+
+	<div data-role="page" id="history-transactions" class="history">
+		<div data-role="header" class="nav">
+			<a href="#activity" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn"></a>
+			<h1>Payment</h1>
+		</div>
+		<div data-role="content" class="content">
+			<p class="date">2014. December 26 03:33:33 PM GMT +9</p>
+			<p class="amount">$ 50.00 was sent to Jamie Lee for Happy birthday!</p>
+		</div>
 	</div>
 
 

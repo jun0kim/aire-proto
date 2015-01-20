@@ -9,10 +9,13 @@ $(function () {
 	var airepay_btn = $('#aire-pay > .actions');
 	var pay_input_balance=50;
 	var currency_symbol = {
-		"usd":"$", "jpy":"¥", "gbp":"€", "mxn":"$", "cny":"¥", "krw":"₩", "eur":"€", "btc":"B"
+		"usd":"$", "jpy":"¥", "gbp":"￡", "mxn":"$", "cny":"¥", "krw":"₩", "eur":"€", "btc":"Ƀ"
 	}
-	var friend_list = $('#aire-pay .friends-list ul li');
-
+	var bPopup = true;
+	
+	transition_init();
+	history_link();
+	popup_bool();
 
 	$('#default-currency').change(function (){
 		default_currency = $(this).find('> option:selected').attr('val');
@@ -24,32 +27,6 @@ $(function () {
 		});
 	});
 	
-	$('#pay-success').bind("tap", function() {
-		$.mobile.changePage("#activity",{transition: "slide" ,reverse: true});
-		$('#pay-btn').attr("href","#");
-		$('#pay-btn').off("tap", pay_btn_clickEvent);
-	});
-
-	$('#info-1').bind("tap swipeleft", function() {
-		$.mobile.changePage("#info-2",{transition: "slide"});
-	});
-	$('#info-2').bind("tap swipeleft", function() {
-		$.mobile.changePage("#info-3",{transition: "slide"});
-	});
-	$('#info-2').bind("swiperight", function() {
-		$.mobile.changePage("#info-1",{transition: "slide", reverse: true});
-	});
-	
-	$('#info-3').bind("swiperight", function() {
-		$.mobile.changePage("#info-2",{transition: "slide", reverse: true });
-	});
-	$('#friend-using-aire .footer').bind("tap", function() {
-		$.mobile.changePage("#welcome",{transition: "slide"});
-	});
-	$('#welcome .footer').bind("tap", function() {
-		$.mobile.changePage("#aire-pay",{transition: "slide"});
-	});
-
 	inputElement.each(function () {
 		$(this).focus(function() {
 			$('#aire-pay').addClass('focused');
@@ -59,15 +36,7 @@ $(function () {
 		});
 	});
 
-	friend_list.each(function () {
-		$(this).click(function (){
-			var name_input = $('#aire-pay #row-friend input');
-			var name = $(this).find('> .name').text();
-
-			name_input.val(name);
-			$('#input-value').focus();
-		});
-	});
+	friends_click();
 
 	$('#input-friend').focus( function (){
 		$('#aire-pay').addClass('friends');
@@ -89,6 +58,51 @@ $(function () {
 		symbol.addClass('currency-symbol');
 		symbol.addClass(pay_currency);
 	});
+
+	function popup_bool(){
+		$('#popup-checkbox').change(function (){
+			bPopup = false;
+			$('#convert-popup').popup("close");
+		});
+	}
+
+	function history_link() {
+		var history_list = $('#activity .transactions');
+
+		history_list.eq(0).bind("tap", function() {
+			$.mobile.changePage("#history-transactions",{transition: "slide"});
+		});
+		history_list.eq(1).bind("tap", function() {
+			$.mobile.changePage("#history-conversion",{transition: "slide"});
+		});
+		history_list.eq(2).bind("tap", function() {
+			$.mobile.changePage("#history-transactions",{transition: "slide"});
+		});
+		history_list.eq(3).bind("tap", function() {
+			$.mobile.changePage("#history-transactions",{transition: "slide"});
+		});
+		history_list.eq(4).bind("tap", function() {
+			$.mobile.changePage("#history-withdraw",{transition: "slide"});
+		});
+		history_list.eq(5).bind("tap", function() {
+			$.mobile.changePage("#history-deposit",{transition: "slide"});
+		});
+
+	}
+
+	function friends_click () {
+		var friend_list = $('#aire-pay .friends-list ul li');
+
+		friend_list.each(function () {
+			$(this).click(function (){
+				var name_input = $('#aire-pay #row-friend input');
+				var name = $(this).find('> .name').text();
+
+				name_input.val(name);
+				$('#input-value').focus();
+			});
+		});
+	}
 
 	function pay_btn_clickEvent() {
 		$('#pay-success .send-name').text($('#input-friend').val());
@@ -150,6 +164,44 @@ $(function () {
 			$('#pay-btn').attr("href","#");
 			$('#pay-btn').off("tap", pay_btn_clickEvent);
 		}
+	}
+
+	function transition_init() {
+		$('#pay-success').bind("tap", function() {
+			$.mobile.changePage("#activity",{transition: "slide" ,reverse: true});
+			$('#pay-btn').attr("href","#");
+			$('#pay-btn').off("tap", pay_btn_clickEvent);
+		});
+
+		$('#info-1').bind("tap swipeleft", function() {
+			$.mobile.changePage("#info-2",{transition: "slide"});
+		});
+		$('#info-2').bind("tap swipeleft", function() {
+			$.mobile.changePage("#info-3",{transition: "slide"});
+		});
+		$('#info-2').bind("swiperight", function() {
+			$.mobile.changePage("#info-1",{transition: "slide", reverse: true});
+		});
+		
+		$('#info-3').bind("swiperight", function() {
+			$.mobile.changePage("#info-2",{transition: "slide", reverse: true });
+		});
+		$('#friend-using-aire .footer').bind("tap", function() {
+			$.mobile.changePage("#welcome",{transition: "slide"});
+		});
+		$('#welcome .footer').bind("tap", function() {
+			$.mobile.changePage("#start-deposit",{transition: "slide"});
+		});
+		$('#start-deposit .footer').bind("tap", function() {
+			$.mobile.changePage("#aire-pay",{transition: "slide"});
+		});
+		$('#aire-pay #aire-pay-balance').bind("tap", function() {
+			$.mobile.changePage("#balance",{transition: "slideup"});
+			if(bPopup)
+				setTimeout(function() {
+					$('#convert-popup').popup("open");
+				}, 500);
+		});
 	}
 
 // convert //
