@@ -53,9 +53,9 @@
 		</div>
 		<div class="text">
 			<p>Don't worry, we will never post anything on your wall.</p>
-			<a href="" data-role="none" class="facebook-btn info-btn">Continue with Facebook</a>
+			<a href="#friend-using-aire" data-role="none" class="facebook-btn info-btn">Continue with Facebook</a>
 			<a href="" data-role="none" class="email-btn info-btn">Sign up using email</a>
-			<p>Have an account? <strong>Log in</strong></p>
+			<a href="#sign-in" data-role="none"><p>Have an account? <strong>Log in</strong></p></a>
 		</div>
 	</div>
 	
@@ -152,6 +152,47 @@
 
 		<div class="footer">
 			<p>Get Started</p>
+		</div>
+	</div>
+
+	<!-- Sign In Page -->
+	<div data-role="page" id="sign-in">
+		<div data-role="header" class="nav">
+		
+			<a href="#info-3" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn">X</a>
+		</div>
+
+		<div data-role="content" class="content">
+			
+			<form>
+	      <div class="row">
+	        <input type="text" name="email" placeholder="Email" value="" data-enhanced="true" data-prevent-focus-zoom="true"/>
+	      </div>
+	      <div class="row">
+	        <input type="password" name="password" placeholder="Password" value="" data-enhanced="true"/>
+	      </div>
+	    </form>
+			<a href="#" data-transition="slide" class="">Sign in</a>
+			<p>Forgot your password?</p>
+		</div>
+	</div>
+
+	<!-- Forgot Password Page -->
+	<div data-role="page" id="forgot-pass">
+		<div data-role="header" class="nav">
+		
+			<a href="#sign-in" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn"></a>
+		</div>
+
+		<div data-role="content" class="content">
+			
+			<form>
+	      <div class="row">
+	        <input type="text" name="email" placeholder="Email" value="" data-enhanced="true" data-prevent-focus-zoom="true"/>
+	      </div>
+	    </form>
+			<a href="#" data-transition="slide" class="">Send</a>
+			<p>If you forgot your password, we can send you an email to reset it.</p>
 		</div>
 	</div>
 

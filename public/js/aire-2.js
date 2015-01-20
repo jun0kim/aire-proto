@@ -39,9 +39,7 @@ $(function () {
 	$('#info-2').bind("swiperight", function() {
 		$.mobile.changePage("#info-1",{transition: "slide", reverse: true});
 	});
-	$('#info-3').bind("tap", function() {
-		$.mobile.changePage("#friend-using-aire",{transition: "slide"});
-	});
+	
 	$('#info-3').bind("swiperight", function() {
 		$.mobile.changePage("#info-2",{transition: "slide", reverse: true });
 	});
@@ -294,7 +292,7 @@ $(document).ready(function (){
 	// while( !$('#start').hasClass('.ui-page-active') ){
 	// 	console.log('wtf!!');
 	// }
-	setTimeout(function() {
-		$.mobile.changePage("#info-1",{transition: "slide"});
-	}, 3000);
+	// setTimeout(function() {
+	// 	$.mobile.changePage("#info-1",{transition: "slide"});
+	// }, 3000);
 });
