@@ -1233,16 +1233,9 @@ div #aire-pay-input #input-currency {
 	color: #3ecec9;
 }
 
-#convert .convert-info p {
-	text-align: center;
-	color: #dedede;
-	text-shadow: none;
-	font-size: 13px;
-	font-weight: 100;
-	margin-top: 0;
-}
 
-#convert .convert-info .icon {
+
+/*#convert .convert-info .icon {
 	position: relative;
 	display: inline-block;
 	width: 16px;
@@ -1252,6 +1245,43 @@ div #aire-pay-input #input-currency {
 	background-repeat: no-repeat;
 	top: 4px;
 	left: 4px;
+}*/
+
+
+
+#convert .text {
+	padding: 0 10px;
+}
+
+#convert .text p {
+	text-align: center;
+	color: #b5b5b5;
+	text-shadow: none;
+	font-size: 12px;
+	font-weight: 200;
+}
+
+#convert .convert-info {
+	margin:0 auto;
+	margin-bottom: 15px;
+	width: 280px;
+	height: 50px;
+}
+
+#convert .convert-info p {
+	text-align: center;
+	color: #7a7a7a;
+	text-shadow: none;
+	font-size: 13px;
+	font-weight: 100;
+	margin-top: 0;
+	line-height: 30px;
+}
+
+#convert #popupDialog a {
+	color: #02b7f3;
+	width: 45%;
+	margin:0 auto;
 }
 
 #convert .convert-btn {
@@ -1270,26 +1300,6 @@ div #aire-pay-input #input-currency {
 	padding-top: 22px;
 	border-radius: 35px;
 }
-
-#convert .exchange-rate p {
-	text-align: center;
-	color: #dedede;
-	text-shadow: none;
-	font-size: 13px;
-	font-weight: 100;
-}
-
-#convert .exchange-rate {
-	margin-top: 50px;
-}
-
-
-#convert #popupDialog a {
-	color: #02b7f3;
-	width: 45%;
-	margin:0 auto;
-}
-
 
 /* Convert Success Page*/
 

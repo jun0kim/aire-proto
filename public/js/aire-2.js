@@ -295,7 +295,7 @@ $(function () {
 
 	function change_rate_text() {
 		var rate_str = rate[currency_to]+ ' '+currency_to.toUpperCase();
-		$('#convert .exchange-rate span').text(rate_str);
+		$('#convert .exchange-rate .amount').text(rate_str);
 	}
 
 	function calc_rate() {
