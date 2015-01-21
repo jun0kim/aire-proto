@@ -151,7 +151,7 @@
 		</div>
 
 		<div class="footer">
-			<p>Next</p>
+			<p>Get Started</p>
 		</div>
 	</div>
 
@@ -399,7 +399,15 @@
 				<a href="#" data-role="none" data-transition="slide" class="ui-btn" id="pay-btn">Pay</a>
 		</div>
 
-		
+		<div class="helper">
+			<div class="pointer">
+			</div>
+			<div class="message">
+				<p>Deposit funds now and send money anywhere for free!</p>
+			</div>
+			<div class="close-btn crossback-btn">
+			</div>
+		</div>
 
 	</div>
 
@@ -471,6 +479,29 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="helper second-step">
+			<div class="pointer">
+			</div>
+			<div class="message">
+				<p>Tap this button to convert currency.</p>
+			</div>
+			<div class="close-btn crossback-btn">
+			</div>
+		</div>
+
+		<div class="helper first-step">
+			<div class="pointer">
+			</div>
+			<div class="message">
+				<p>Select a currency you wish to convert.</p>
+			</div>
+			<div class="close-btn crossback-btn">
+			</div>
+		</div>
+
+
+
 	</div>
 
 	<!-- convert Success -->
@@ -582,6 +613,16 @@
 			</div>
 		</div>
 
+		<div class="helper">
+			<div class="pointer">
+			</div>
+			<div class="message">
+				<p>Select your Bitcoin balance to convert a different currency.</p>
+			</div>
+			<div class="close-btn crossback-btn">
+			</div>
+		</div>
+
 	</div>
 		
 	
@@ -591,12 +632,12 @@
 		<div data-role="content" class="content">
 			<ul>
 				<li id="confirm-balance" class="usd">50</li>
-				<li>was sent to <br><span class="send-name">Jamie Lee<span></li>
+				<li>was safely deposited into <br><span class="send-name">Jamie Lee</span>'s account!</li>
 			</ul>
 			<a href="#activity" data-transition="slide" data-direction="reverse"><div class="confirm-btn"></div></a>
-			<div>
+			<!-- <div>
 				<p>You saved <span class="saved-money">$5</span> through Aire!</p>
-			</div>
+			</div> -->
 		</div>
 		<div data-role="footer" class="actions">
 			<a href="#" data-role="none" class="ui-btn">Complete</a>
@@ -663,7 +704,26 @@
 			<p>Where can I get bitcoin?</p>
 			<p>How long does it take to get deposited?</p>
 		</div>
-
+		
+		<div data-role="popup" id="deposit-popup" data-dismissible="false" style="max-width:280px;">
+			<div role="main" class="ui-content">
+				<div class="symbol"></div>
+				<div class="text">
+					<p>To use Aire, verifying your bank account or credit card is unnecessary. Aire uses Bitcoin to reduce the costs and friction involved in financial transaction. To deposit funds, you can send bitcoins to your Aire account.
+					</p>
+				</div>
+				<div class="action">
+					<a href="#" data-role="none">I've got it!</a>
+				</div>
+				<div class="not-show">
+					<div class="ui-checkbox">
+						<label for="popup-checkbox-deposit" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Do not show this again</label>
+						<input type="checkbox" id="popup-checkbox-deposit" data-corners="false" data-enhanced="true"></input>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 	<!-- Profile-->
 	<div data-role="page" id="profile">
@@ -723,6 +783,17 @@
 		<div data-role="footer" class="actions">
 			<a href="#" data-role="none" class="ui-btn">Log out</a>
 		</div>
+
+		<div class="helper">
+			<div class="pointer">
+			</div>
+			<div class="message">
+				<p>Tap here to deposit funds</p>
+			</div>
+			<div class="close-btn crossback-btn">
+			</div>
+		</div>
+
 	</div>
 
 	<!-- Activity -->

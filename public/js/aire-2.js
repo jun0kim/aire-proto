@@ -11,11 +11,17 @@ $(function () {
 	var currency_symbol = {
 		"usd":"$", "jpy":"¥", "gbp":"￡", "mxn":"$", "cny":"¥", "krw":"₩", "eur":"€", "btc":"Ƀ"
 	}
-	var bPopup = true;
-	
+	var bConvertPopup = true;
+	var bDepositPopup = true;
+
 	transition_init();
 	history_link();
-	popup_bool();
+	popup_init()
+	helper_close();
+
+	
+	// $('#deposit').live('pagecreate', function() {
+				
 
 	$('#default-currency').change(function (){
 		default_currency = $(this).find('> option:selected').attr('val');
@@ -59,10 +65,25 @@ $(function () {
 		symbol.addClass(pay_currency);
 	});
 
+	function helper_close() {
+		var close_btn = $('.helper .close-btn');
+
+		close_btn.each(function() {
+			$(this).click(function() {
+				$(this).parent().css("display","none");
+			});
+		})
+	}
+
 	function popup_bool(){
 		$('#popup-checkbox').change(function (){
-			bPopup = false;
+			bConvertPopup = false;
 			$('#convert-popup').popup("close");
+		});
+
+		$('#popup-checkbox-deposit').change(function (){
+			bDepositPopup = false;
+			$('#deposit-popup').popup("close");
 		});
 	}
 
@@ -190,17 +211,14 @@ $(function () {
 			$.mobile.changePage("#welcome",{transition: "slide"});
 		});
 		$('#welcome .footer').bind("tap", function() {
-			$.mobile.changePage("#start-deposit",{transition: "slide"});
+			$.mobile.changePage("#aire-pay",{transition: "slide"});
 		});
 		$('#start-deposit .footer').bind("tap", function() {
 			$.mobile.changePage("#aire-pay",{transition: "slide"});
 		});
 		$('#aire-pay #aire-pay-balance').bind("tap", function() {
 			$.mobile.changePage("#balance",{transition: "slideup"});
-			if(bPopup)
-				setTimeout(function() {
-					$('#convert-popup').popup("open");
-				}, 500);
+			
 		});
 	}
 
@@ -213,6 +231,7 @@ $(function () {
 	var rate = {
 		"usd":1.18, "jpy":138.14, "gbp":0.78, "mxn":17.29, "cny":7.31, "krw":1275.89, "btc":0.005532
 	}
+	var bConvertTutorial = true;
 	
 
 	$('#convert .nav .cancel-btn').click(convert_clear_input);
@@ -242,12 +261,20 @@ $(function () {
 		change_rate_text();
 		change_rate_convert_success();
 		change_btn_to();
+
+		if(bConvertTutorial)
+			convert_helper_goto_nextstep();
 	});
 
 	$('#convert-accept').click(function() {
 		set_convert_balance();
 		convert_clear_input();
 	});
+
+	function convert_helper_goto_nextstep(){
+		$('#convert .first-step').css("display","none");
+		$('#convert .second-step').css("display","block");
+	}
 
 	function set_convert_balance(){
 		convert_balance = (convert_balance - input_balance).toFixed(2);
@@ -334,8 +361,48 @@ $(function () {
 		var input_balance = $('#convert .convert-input .source').val();
 		$('#convert-remain-balance').text( (convert_balance-input_balance).toFixed(2) );
 	}
+
+	function popup_init() {
+		$(document).on("pageshow", "#balance", function() {
+			if(bConvertPopup)
+				setTimeout(function() {
+					$('#convert-popup').popup("open");
+				}, 500);
+		});
+
+		$(document).on("pageshow", "#deposit", function() {
+			if(bDepositPopup)
+				setTimeout(function() {
+					$('#deposit-popup').popup("open");
+				}, 500);
+		});
+
+		popup_bool();
+		deposit_popup_close();
+		convert_popup_close();
+	}
+
+	function deposit_popup_close() {
+		$('#deposit-popup .action a').bind("tap", function(){
+			$('#deposit-popup').popup("close");
+		});
+	}
+
+	function convert_popup_close() {
+		$('#convert-popup .action a').bind("tap", function(){
+			$('#convert-popup').popup("close");
+		});
+	}
 	
 });
+
+$(document).on("pageinit", "#start", function() {
+	setTimeout(function() {
+		$.mobile.changePage("#info-1",{transition: "slide"});
+	}, 3000);
+});
+
+
 
 $(document).ready(function (){
 	// if( $('#start').hasClass('.ui-page-active'))
@@ -344,7 +411,5 @@ $(document).ready(function (){
 	// while( !$('#start').hasClass('.ui-page-active') ){
 	// 	console.log('wtf!!');
 	// }
-	// setTimeout(function() {
-	// 	$.mobile.changePage("#info-1",{transition: "slide"});
-	// }, 3000);
+	
 });

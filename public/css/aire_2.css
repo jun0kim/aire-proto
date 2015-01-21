@@ -128,6 +128,42 @@ h1 {
 	position: relative;
 }
 
+.helper {
+	background-color: #4579b4;
+	position: absolute;
+}
+
+.helper .message {
+	padding: 20px 0 20px 15px;
+	display: inline-block;
+	width: 75%;
+}
+
+.helper .message p {
+	text-shadow: none;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 100;
+}
+
+.helper .close-btn {
+	display: inline-block;
+	float: right;
+	margin-right: 15px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.helper .pointer {
+	position: absolute;
+	display: block;
+	height: 55px;
+	width: 60px;
+	background-image: url('../images/helper-pointer.png');
+	background-size: 60px 55px;
+	background-repeat: no-repeat;
+}
+
 /*.currency-symbol.usd::after, .currency-symbol.mxn::after {
 	content: '$';
 }
@@ -184,6 +220,7 @@ h1 {
 	display: inline-block;
 	top: 12px;
 	left: 20px;
+	z-index: 10;
 }
 
 #nav-activity {
@@ -460,6 +497,15 @@ div #aire-pay-input #input-currency {
 	border-width: 1px;
 }
 
+#aire-pay .helper {
+	width: 220px;
+	top: 60px;
+}
+
+#aire-pay .helper .pointer {
+	top: -62px;
+	left: 1px;
+}
 
 /* Pay Success Page*/
 
@@ -722,6 +768,21 @@ div #aire-pay-input #input-currency {
 	width: 100%;
 }
 
+#profile .deposit a{
+	z-index: 10;
+}
+
+#profile .helper {
+	width: 220px;
+	right: 0;
+	top: 280px;
+}
+
+#profile .helper .pointer {
+	right: 0;
+	top: -55px;
+}
+
 
 /* Activity Page*/
 
@@ -885,7 +946,7 @@ div #aire-pay-input #input-currency {
 	margin:12px 0 0 10px;
 }
 
-#balance .message {
+#balance .nav .message {
 	position: absolute;
 	text-shadow: none;
 	color: #fff;
@@ -897,15 +958,15 @@ div #aire-pay-input #input-currency {
 
 
 
-#balance .message p {
+#balance .nav .message p {
 	margin: 5px 0;	
 }
 
-#balance .message p:first-child {
+#balance .nav .message p:first-child {
 	color: #666;
 }
 
-#balance .message p:last-child {
+#balance .nav .message p:last-child {
 	font-size: 15px;
 	font-weight: 400;
 }
@@ -1010,6 +1071,21 @@ div #aire-pay-input #input-currency {
 #balance .property.brp {
 	border: 0;
 }
+
+#balance .helper {
+	bottom: 0;
+}
+
+#balance .helper .pointer {
+	right: 0;
+	top: 220px;
+	position: fixed;
+}
+/* for tap event */
+#balance .content .preoperty.bitcoin .property-container {
+	z-index: 10;
+}
+
 
 /*#balance .actions {
 	position: fixed;
@@ -1233,7 +1309,9 @@ div #aire-pay-input #input-currency {
 	color: #3ecec9;
 }
 
-
+#convert .convert-input select:focus {
+	outline: none;
+}
 
 /*#convert .convert-info .icon {
 	position: relative;
@@ -1257,7 +1335,7 @@ div #aire-pay-input #input-currency {
 	text-align: center;
 	color: #b5b5b5;
 	text-shadow: none;
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: 200;
 }
 
@@ -1299,6 +1377,43 @@ div #aire-pay-input #input-currency {
 	font-weight: 400;
 	padding-top: 22px;
 	border-radius: 35px;
+}
+
+#convert .helper {
+	width: 100%;
+	bottom: 0;
+}
+
+#convert .helper.second-step {
+	display: none;
+}
+
+#convert .helper.first-step .pointer {
+	position: fixed;	
+	right: 10%;
+	top: 265px;
+}
+
+#convert .helper.second-step .pointer {
+	left: 41%;
+	top: 440px;
+	position: fixed;
+}
+
+.focused#convert .helper.second-step .pointer {
+	top: 320px;
+}
+
+.focused#convert .helper.first-step .pointer {
+	top: 140px;
+}
+
+#convert .convert-input select {
+	z-index: 10;
+}
+
+#convert .convert-btn {
+	z-index: 10;
 }
 
 /* Convert Success Page*/
@@ -2600,3 +2715,59 @@ div #aire-pay-input #input-currency {
 #convert-popup .ui-checkbox input {
 	left: 35px;
 }
+
+#deposit-popup {
+	text-align: center;
+}
+
+#deposit-popup p {
+	line-height: 20px;
+}
+
+#deposit-popup .symbol {
+	width: 80px;
+	height: 109px;
+	background-image: url('../images/deposit-popup-img.png');
+	background-repeat: no-repeat;
+	background-size: 80px 109px;
+	margin: 20px auto;
+}
+
+#deposit-popup .text {
+
+}
+
+#deposit-popup .action {
+
+}
+
+#deposit-popup .action a {
+	display: block;
+	width: 210px;
+	color: #fff;
+	background-color: #33cc99;
+	height: 33px;
+	font-weight: 300;
+	text-shadow: none;
+	padding-top: 15px;
+	margin: 0 auto;
+}
+
+#deposit-popup .not-show {
+	margin-top: 20px;
+}
+
+#deposit-popup .ui-checkbox {
+	padding-left: 28px;
+}
+
+#deposit-popup .ui-checkbox label {
+	border: 0;
+	font-size: 11px;
+	padding-left: 33px;
+}
+
+#deposit-popup .ui-checkbox input {
+	left: 35px;
+}
+
