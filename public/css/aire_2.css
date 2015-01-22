@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, sub, sup, tt, var,
-b, u, i, center,
+b, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -2887,3 +2887,23 @@ div #aire-pay-input #input-currency {
 	left: 35px;
 }
 
+#aire-pay-popup h1 {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+#aire-pay-popup p {
+	text-align: center;
+	font-size: 14px;
+}
+
+#aire-pay-popup a {
+	color: #02b7f3;
+	width: 45%;
+	margin:0 auto;
+}
+
+#aire-pay-popup a:first-child {
+	border-right: 1px solid #cfcfcf;
+}

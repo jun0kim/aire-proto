@@ -22,6 +22,7 @@ $(function () {
 	helper_close();
 	init_balance_input_event();
 	get_defaultCurrency_fromView();
+	set_airePopup_clear();
 	
 	// $('#deposit').live('pagecreate', function() {
 				
@@ -66,6 +67,12 @@ $(function () {
 		set_payCurrency_toView();
 	});
 
+	function set_airePopup_clear() {
+		var btn = $('#aire-pay-popup .aire-popup-btn');
+		btn.each(function() {
+			$(this).on("click",clear_input);
+		});
+	}
 	function set_payInit_toView() {
 		pay_currency = default_currency;
 		$('#current-balance').text(balance[pay_currency]);
@@ -249,12 +256,16 @@ $(function () {
 		});
 		if(count == 3){
 			airepay_btn.addClass("on");
-			$('#pay-btn').attr("href","#pay-success");
-			// $('#pay-btn').on("tap", pay_btn_clickEvent);
+			if(balance[pay_currency]<=0){
+				$('#pay-btn').attr("href","#aire-pay-popup").attr("data-rel","popup").attr("data-transition","pop").attr("data-position-to","window");
+			}
+			else{
+				$('#pay-btn').attr("href","#pay-success").attr("data-rel","").attr("data-transition","slide").attr("data-position-to","");;
+			}
 		}
 		else{
 			airepay_btn.removeClass("on");
-			$('#pay-btn').attr("href","#");
+			$('#pay-btn').attr("href","#").attr("data-rel","").attr("data-transition","slide").attr("data-position-to","");
 			// $('#pay-btn').off("tap", pay_btn_clickEvent);
 		}
 	}
