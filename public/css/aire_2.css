@@ -174,7 +174,7 @@ h1 {
 }
 
 .currency-symbol.btc::after {
-	content: 'Ƀ';
+	content: 'B';
 }
 
 .currency-symbol.eur::before {
@@ -198,7 +198,7 @@ span.pay-currency.krw::before {
 }
 
 span.pay-currency.btc::before {
-	content: 'Ƀ';
+	content: 'B';
 }
 
 span.pay-currency.eur::before {
@@ -332,7 +332,7 @@ div #aire-pay-balance {
 }
 
 #remain-balance.btc::before {
-	content: 'Ƀ';
+	content: 'B';
 }
 
 #remain-balance.eur::before {
@@ -385,7 +385,7 @@ div #aire-pay-balance {
 }
 
 #aire-pay-balance #current-balance.btc::before {
-	content: 'Ƀ';
+	content: 'B';
 }
 
 #aire-pay-balance #current-balance.eur::before {
@@ -508,7 +508,7 @@ div #aire-pay-input label.pay-currency.krw::after {
 }
 
 div #aire-pay-input label.pay-currency.btc::after {
-	content: 'Ƀ';
+	content: 'B';
 }
 
 div #aire-pay-input label.pay-currency.eur::before {
@@ -625,7 +625,7 @@ div #aire-pay-input #input-currency {
 }
 
 #pay-success .content ul li:first-child.btc::before {
-	content: 'Ƀ';
+	content: 'B';
 }
 
 #pay-success .content ul li:first-child.jpy::before, #pay-success .content ul li:first-child.cny::before {
@@ -982,7 +982,7 @@ div #aire-pay-input #input-currency {
 }*/
 
 .content .container .amount.btc span::after {
-	content: 'Ƀ';
+	content: 'B';
 	margin-right: 5px;
 }
 
@@ -1302,7 +1302,7 @@ div #aire-pay-input #input-currency {
 }
 
 #convert .current-balance ul li:last-child.btc::before {
-	content: 'Ƀ';
+	content: 'B';
 }
 
 #convert .current-balance ul li:last-child.eur::before {
@@ -1401,7 +1401,7 @@ div #aire-pay-input #input-currency {
 }
 
 #convert .convert-input label.btc::after {
-	content: 'Ƀ';
+	content: 'B';
 }
 
 #convert .convert-input select {
@@ -1592,7 +1592,7 @@ div #aire-pay-input #input-currency {
 }
 
 #convert-success .content ul li.btc::before {
-	content: 'Ƀ';
+	content: 'B';
 }
 
 #convert-success .content p {
@@ -1685,7 +1685,7 @@ div #aire-pay-input #input-currency {
 }
 
 #withdraw .input input[name="value"]+ label::after {
-	content: 'Ƀ';
+	content: 'B';
 }
 
 #withdraw .input input.address {

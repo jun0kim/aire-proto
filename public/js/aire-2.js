@@ -4,7 +4,7 @@ $(function () {
 	var airepay_btn = $('#aire-pay > .actions');
 	var pay_input_balance=0;
 	var currency_symbol = {
-		"usd":"$", "jpy":"¥", "gbp":"￡", "mxn":"$", "cny":"¥", "krw":"₩", "eur":"€", "btc":"Ƀ"
+		"usd":"$", "jpy":"¥", "gbp":"￡", "mxn":"$", "cny":"¥", "krw":"₩", "eur":"€", "btc":"B"
 	}
 	var balance = {
 		"usd":0, "jpy":0, "gbp":0.00, "mxn":0, "cny":0, "krw":0, "eur":0, "btc":2.134322
