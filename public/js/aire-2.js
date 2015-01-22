@@ -7,8 +7,9 @@ $(function () {
 		"usd":"$", "jpy":"¥", "gbp":"￡", "mxn":"$", "cny":"¥", "krw":"₩", "eur":"€", "btc":"B"
 	}
 	var balance = {
-		"usd":0, "jpy":0, "gbp":0.00, "mxn":0, "cny":0, "krw":0, "eur":0, "btc":2.134322
+		"btc":2.134322, "usd":0, "eur":0, "jpy":0, "gbp":0.00, "mxn":0, "cny":0, "krw":0
 	}
+	var currency = ["btc","usd","gbp","eur","mxn","jpy","cny","krw"];
 
 	var bConvertPopup = true;
 	var bDepositPopup = true;
@@ -302,7 +303,7 @@ $(function () {
 
 // convert //
 	var convert_inputElement = $('#convert input')
-	var currency_to = 'btc';
+	var currency_to = 'usd';
 	var currency_from ='btc';
 	var input_balance = 0;
 	var convert_fee = 0;
@@ -557,6 +558,8 @@ $(function () {
 		calc_rate();
 		calc_fee();
 		set_convertFrom_toView();
+		set_ConvertOption_toView();
+		set_CurrencyTo_toView();
 	}
 
 	function set_convertFrom_toView() {
@@ -583,6 +586,22 @@ $(function () {
 			$(this).addClass('convert-currency');
 			$(this).addClass(currency_from);
 		});
+
+		
+	}
+
+	function set_CurrencyTo_toView() {
+		var convert_currency_to = $('#convert .convert-input .convert-currency-to');
+
+		$.each(balance, function(key, value){
+			currency_to = key;
+			if(currency_to != currency_from)
+				return false;
+		});
+
+		convert_currency_to.removeClass();
+		convert_currency_to.addClass('convert-currency-to');
+		convert_currency_to.addClass(currency_to);
 	}
 
 	function set_ConvertBalance_toView() {
@@ -658,6 +677,25 @@ $(function () {
 				sel.css("width",percent);
 			}
 
+		});
+	}
+	
+	function set_ConvertOption_toView() {
+		var convert_select = $('#convert .convert-input select');
+		var select_option = convert_select.find('option');
+
+		select_option.each(function() {
+			$(this).remove();
+		});
+
+		$.each(balance, function(key,value){
+			if(key === currency_from){
+
+			}
+			else{
+				var opt = '<option val="'+key+'">'+key.toUpperCase()+"</option>";
+				convert_select.append(opt);
+			}
 		});
 	}
 
