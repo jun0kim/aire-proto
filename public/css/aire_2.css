@@ -131,6 +131,7 @@ h1 {
 .helper {
 	background-color: #4579b4;
 	position: absolute;
+	display: none;
 }
 
 .helper .message {
@@ -188,6 +189,29 @@ h1 {
 	content: '￡';
 }*/
 
+/*span.pay-currency.usd::before, span.pay-currency.mxn::before {
+	content: '$';
+}
+
+span.pay-currency.krw::before {
+	content: '₩';
+}
+
+span.pay-currency.btc::before {
+	content: 'Ƀ';
+}
+
+span.pay-currency.eur::before {
+	content: '€';
+}
+
+span.pay-currency.jpy::before, span.pay-currency.cny::before {
+	content: '¥';
+}
+
+span.pay-currency.gbp::before {
+	content: '￡';
+}*/
 
 /* Start */
 
@@ -294,9 +318,33 @@ div #aire-pay-balance {
 	padding:5px 0 0 23px;
 }
 
+
 #remain-balance::before {
+	margin:0 3px;
+}
+
+#remain-balance.usd::before, #remain-balance.mxn::before {
 	content: '$';
-	margin:0 1px;
+}
+
+#remain-balance.krw::before {
+	content: '₩';
+}
+
+#remain-balance.btc::before {
+	content: 'Ƀ';
+}
+
+#remain-balance.eur::before {
+	content: '€';
+}
+
+#remain-balance.cny::before, #remain-balance::before {
+	content: '¥';
+}
+
+#remain-balance.gbp::before {
+	content: '￡';
 }
 
 #aire-pay-balance a{
@@ -321,11 +369,35 @@ div #aire-pay-balance {
 	font-size:42px;
 }
 
-#aire-pay-balance ul li:last-child::before {
-	content: '$';
+#current-balance::before {
 	font-size: 28px;
 	vertical-align: text-top;
 	margin-right: 5px;
+}
+
+
+#aire-pay-balance #current-balance.usd::before, #aire-pay-balance #current-balance.mxn::before {
+	content: '$';
+}
+
+#aire-pay-balance #current-balance.krw::before {
+	content: '₩';
+}
+
+#aire-pay-balance #current-balance.btc::before {
+	content: 'Ƀ';
+}
+
+#aire-pay-balance #current-balance.eur::before {
+	content: '€';
+}
+
+#aire-pay-balance #current-balance.cny::before, #aire-pay-balance #current-balance.jpy::before {
+	content: '¥';
+}
+
+#aire-pay-balance #current-balance.gbp::before {
+	content: '￡';
 }
 
 /*pay-input*/
@@ -418,7 +490,7 @@ div #aire-pay-input input:focus {
 	padding-left: 1em;
 }
 
-div #aire-pay-input input[name="value"].usd + label {
+div #aire-pay-input label.pay-currency {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -427,27 +499,27 @@ div #aire-pay-input input[name="value"].usd + label {
 	color: #999;
 }
 
-div #aire-pay-input input[name="value"].usd + label.usd::after, div #aire-pay-input input[name="value"].usd + label.mxn::after {
+div #aire-pay-input label.pay-currency.usd::after, div #aire-pay-input label.pay-currency.mxn::after {
 	content: '$';
 }
 
-div #aire-pay-input input[name="value"].usd + label.krw::after {
+div #aire-pay-input label.pay-currency.krw::after {
 	content: '₩';
 }
 
-div #aire-pay-input input[name="value"].usd + label.btc::after {
+div #aire-pay-input label.pay-currency.btc::after {
 	content: 'Ƀ';
 }
 
-div #aire-pay-input input[name="value"].usd + label.eur::before {
+div #aire-pay-input label.pay-currency.eur::before {
 	content: '€';
 }
 
-div #aire-pay-input input[name="value"].usd + label.cny::before, div #aire-pay-input input[name="value"].usd + label.jpy::before {
+div #aire-pay-input label.pay-currency.cny::before, div #aire-pay-input label.pay-currency.jpy::before {
 	content: '¥';
 }
 
-div #aire-pay-input input[name="value"].usd + label.gbp::before {
+div #aire-pay-input label.pay-currency.gbp::before {
 	content: '￡';
 }
 
@@ -956,8 +1028,6 @@ div #aire-pay-input #input-currency {
 	top: 10px;
 }
 
-
-
 #balance .nav .message p {
 	margin: 5px 0;	
 }
@@ -1000,27 +1070,27 @@ div #aire-pay-input #input-currency {
 }
 
 .eur .image {
-	background-image: url('../images/euro.png');
+	background-image: url('../images/coin_euro.png');
 }
 
 .usd .image {
-	background-image: url('../images/usd.png');
+	background-image: url('../images/coin_dollar.png');
 }
 
 .krw .image {
-	background-image: url('../images/krw.png');
+	background-image: url('../images/coin_won.png');
 }
 
-.bitcoin .image {
-	background-image: url('../images/bitcoin.png');
+.btc .image {
+	background-image: url('../images/coin_bitcoin.png');
 }
 
 .jpy .image {
-	background-image: url('../images/jpy.png');
+	background-image: url('../images/coin_yen.png');
 }
 
-.brp .image {
-	background-image: url('../images/brp.png');
+.gbp .image {
+	background-image: url('../images/coin_pound.png');
 }
 
 #balance .property-container div {
@@ -1036,24 +1106,30 @@ div #aire-pay-input #input-currency {
 	font-weight: 300;
 }
 
-#balance .property-container .balance-bar {
+#balance .property-container .balance-bar-container {
 	display: block;
 	height:3px;
-	background-color: #1c9b72;
 	margin-left: 40px;
 	top: -3px;
+	width: 80%;
+}
+
+#balance .property-container .balance-bar {
+	background-color: #1c9b72;
+	height: 3px;
+	position: absolute;
 }
 
 #balance .eur .property-container .balance-bar {
-	width: 20%;
+	width: 0%;
 }
 
 #balance .usd .property-container .balance-bar {
 	width: 40%;
 }
 
-#balance .bitcoin .property-container .balance-bar {
-	width: 30%;
+#balance .btc .property-container .balance-bar {
+	width: 100%;
 }
 
 #balance .property-container .click-btn {
@@ -1068,7 +1144,19 @@ div #aire-pay-input #input-currency {
 	color: #777;
 }
 
-#balance .property.brp {
+#balance .property.empty .balance-bar {
+	display: none;
+}
+
+#balance .property.empty .image {
+	opacity: 0.4;
+}
+
+#balance .property.empty .click-btn {
+	display: none;
+}
+
+#balance .property.gbp {
 	border: 0;
 }
 
@@ -1082,7 +1170,7 @@ div #aire-pay-input #input-currency {
 	position: fixed;
 }
 /* for tap event */
-#balance .content .preoperty.bitcoin .property-container {
+#balance .content .preoperty.btc .property-container {
 	z-index: 10;
 }
 
@@ -1200,10 +1288,33 @@ div #aire-pay-input #input-currency {
 }
 
 #convert .current-balance ul li:last-child::before {
-	content: '€';
 	font-size: 28px;
 	vertical-align: text-top;
 	margin-right: 5px;
+}
+
+#convert .current-balance ul li:last-child.usd::before, #convert .current-balance ul li:last-child.mxn::before {
+	content: '$';
+}
+
+#convert .current-balance ul li:last-child.krw::before {
+	content: '₩';
+}
+
+#convert .current-balance ul li:last-child.btc::before {
+	content: 'Ƀ';
+}
+
+#convert .current-balance ul li:last-child.eur::before {
+	content: '€';
+}
+
+#convert .current-balance ul li:last-child.cny::before, #convert .current-balance ul li:last-child.jpy::before {
+	content: '¥';
+}
+
+#convert .current-balance ul li:last-child.gbp::before {
+	content: '￡';
 }
 
 #convert-remaining-balance {
@@ -1221,11 +1332,6 @@ div #aire-pay-input #input-currency {
 	text-shadow: none;
 	margin: 0;
 	padding:5px 0 0 23px;
-}
-
-#convert-remain-balance::before {
-	content: '€';
-	margin:0 2px;
 }
 
 #convert .convert-input {
@@ -1749,7 +1855,7 @@ div #aire-pay-input #input-currency {
 	list-style: none;
 	margin: 0 auto;
 	padding: 0;
-	width: 27px;
+	width: 40px;
 	padding-top: 10px;
 }
 
@@ -1771,6 +1877,10 @@ div #aire-pay-input #input-currency {
 	padding-top: 30px;
 }
 
+.info .text p {
+	line-height: 20px;
+}
+
 #info-1 .container {
 	background-image: url('../images/walkthrough-1.png');
 	background-size: 194px 303px;
@@ -1785,22 +1895,28 @@ div #aire-pay-input #input-currency {
 
 #info-3 .container {
 	background-image: url('../images/walkthrough-3.png');
+	background-size: 191px 300px;
+	background-position: 50% 100%;
+}
+
+#info-4 .container {
+	background-image: url('../images/walkthrough-4.png');
 	background-size: 134px 51px;
 	background-position: 50% 55%;
 }
 
-#info-3 .text {
+#info-4 .text {
 	padding-top:0;
 }
 
-#info-3 .text p:first-child {
+#info-4 .text p:first-child {
 	color: #999;
 	font-size: 11px;
 	text-shadow: none;
 	margin: 11px 0;
 }
 
-#info-3 .text .info-btn {
+#info-4 .text .info-btn {
 	display: block;
 	text-shadow: none;
 	font-size: 14px;
@@ -1813,17 +1929,17 @@ div #aire-pay-input #input-currency {
 	border-radius: 3px;
 }
 
-#info-3 .text .facebook-btn {
+#info-4 .text .facebook-btn {
 	background-color: #5b7fdf;
 	color: #fff;
 }
 
-#info-3 .text .email-btn {
+#info-4 .text .email-btn {
 	background-color: #f3f3f3;
 	color: #646464;
 }
 
-#info-3 .text p:last-child {
+#info-4 .text p:last-child {
 	font-size: 14px;
 	color: #888;
 	text-shadow: none;
