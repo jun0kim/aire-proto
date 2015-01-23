@@ -2000,13 +2000,26 @@ div #aire-pay-input #input-currency {
 }
 
 #deposit-helper-4 .title {
-	margin: 40px auto;
+	margin: 20px auto 30px auto;
 	font-size: 21px;
 	width: 290px;
 }
+
+#deposit-helper-4 .title p {
+	font-size: 13px;
+	text-align: left;
+	color: #777;
+	line-height: 14px;
+}
+
 #deposit-helper-4 .companies p {
-	font-size: 22px;
-	color: #666;
+	color: #9a9a9a;
+	text-align: left;
+	font-size: 12px;
+	line-height: 13px;	
+}
+#deposit-helper-4 .companies a {
+	color: #1ec58e;
 }
 
 #deposit-helper-4 .companies {
@@ -2017,7 +2030,10 @@ div #aire-pay-input #input-currency {
 	color: #fff;
 	background-color: #33cc99;
 	margin-bottom: 15px;
-	height: 65px;
+	height: 50px;
+	font-size: 16px;
+	width: 280px;
+	padding-top: 15px;
 }
 
 #deposit-helper-4 .help {
