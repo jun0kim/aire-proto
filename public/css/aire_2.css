@@ -1522,6 +1522,53 @@ div #aire-pay-input #input-currency {
 	z-index: 10;
 }
 
+/* Convert Notification Page*/
+#convert-notification {
+	background-color: #1ec6c0;
+	text-align: center;
+}
+
+#convert-notification p {
+	color: #fff;
+	text-shadow: none;
+	line-height: 20px;
+	font-weight: 200;
+	font-size: 17px;
+}
+
+#convert-notification .convert-amount {
+	margin: 100px 0 50px;
+}
+
+ #convert-notification .actions {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: -webkit-flex;
+	height: 56px;
+	background: #fff;
+	color: #ccc;
+}
+
+#convert-notification .actions a{
+	width: 49%;
+	height: 31px;
+	background: #fff;
+	color: #ccc;
+	font-size: 18px;
+	text-shadow: none;
+	box-shadow: none;
+	margin: auto 0;
+	padding-top: 8px;
+	
+}
+
+#convert-notification a:first-child {
+	border-right:solid;
+	border-width: 1px;
+}
+
 /* Convert Success Page*/
 
 #convert-success {

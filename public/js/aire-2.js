@@ -387,6 +387,13 @@ $(function () {
 		convert_clear_input();
 	});
 
+	$('#convert-reject').click(function() {
+		convert_clear_input();
+	})
+
+	$(document).on("pagebeforeshow", "#convert-notification", function() {
+
+	});
 	$(document).on("pagebeforeshow", "#balance", function() {
 		set_balance_init();
 	});
@@ -443,7 +450,7 @@ $(function () {
 
 		var fee_str = currency_symbol[currency_from] + ' ' + total;
 
-		$('#convert .fee').each(function() {
+		$('.fee').each(function() {
 			$(this).text(fee_str);
 		});
 	}
@@ -459,6 +466,10 @@ $(function () {
 	function set_val_convert_success(src, tar) {
 		$('#convert-balance-src').text(src);
 		$('#convert-balance-tar').text(tar);
+
+		// for notification
+		$('#convert-notification .convert-src').text(currency_symbol[currency_from]+' '+src);
+		$('#convert-notification .convert-tar').text(currency_symbol[currency_to]+' '+tar);
 	}
 
 	function change_rate_text() {

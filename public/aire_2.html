@@ -516,16 +516,16 @@
 			</div>
 
 			<div class="convert-btn">
-				<a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop">Convert <span class="currency-from">EUR</span> to <span class="currency-to">USD</span></a>
+				<a href="#convert-notification" data-transition="slide">Convert <span class="currency-from">EUR</span> to <span class="currency-to">USD</span></a>
 			</div>
 
-			<div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:280px;">
+			<!-- <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:280px;">
 				<div role="main" class="ui-content">
 					<p>A 1% fee, <span class="fee"></span> will apply for the currency conversion.<br>Do you want to convert now?</p>
 					<a href="#" class="ui-btn ui-btn-inline ui-btn-a" data-rel="back">Cancel</a>
 					<a href="#convert-success" class="ui-btn ui-btn-inline ui-btn-a" data-transition="slide" id="convert-accept">Yes</a>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 		<div class="helper second-step">
@@ -547,9 +547,27 @@
 			<div class="close-btn crossback-btn">
 			</div>
 		</div>
+	</div>
 
+	<div data-role="page" id="convert-notification">
+		<div data-role="content" class="content">
+			<div class="convert-amount">
+				<p>You're about to convert<br>
+					<span class="convert-src"></span> to <span class="convert-tar"></span>
+				</p>
+			</div>
+			<div class="convert-fee">
+				<p>
+					A 1% fee, <span class="fee"></span> will apply for the currency conversion.<br>
+					Do you want to convert now?
+				</p>
+			</div>
+		</div>
 
-
+		<div data-role="footer" class="actions">
+			<a href="#convert" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn" id="convert-reject">No</a>
+			<a href="#convert-success" data-role="none" class="ui-btn" id="convert-accept" data-transition="slide">Yes</a>
+		</div>
 	</div>
 
 	<!-- convert Success -->
