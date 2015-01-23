@@ -12,7 +12,7 @@ $(function () {
 	var currency = ["btc","usd","gbp","eur","mxn","jpy","cny","krw"];
 
 	var bConvertPopup = true;
-	var bDepositPopup = true;
+	var bDepositPopup = false;
 	var bPayFocused = false;
 	var inputElement = $('.sending-input');
 

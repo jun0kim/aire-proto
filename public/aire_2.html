@@ -177,7 +177,7 @@
 	<!-- Sign Up Page -->
 	<div data-role="page" id="sign-up">
 		<div data-role="header" class="nav">
-			<a href="#info-3" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn">X</a>
+			<a href="#info-4" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn">X</a>
 		</div>
 
 		<div data-role="content" class="content">
@@ -266,7 +266,7 @@
 	<div data-role="page" id="sign-in">
 		<div data-role="header" class="nav">
 		
-			<a href="#info-3" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn">X</a>
+			<a href="#info-4" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn">X</a>
 		</div>
 
 		<div data-role="content" class="content">
@@ -279,7 +279,7 @@
 	        <input type="password" name="password" placeholder="Password" value="" data-enhanced="true"/>
 	      </div>
 	    </form>
-			<a href="#" data-transition="slide" class="">Sign in</a>
+			<a href="#aire-pay" data-transition="slide" class="">Sign in</a>
 			<p>Forgot your password?</p>
 
 			<script>
@@ -785,6 +785,120 @@
 		</div>
 		
 	</div>
+	
+
+	<!-- Deposit Helper -->
+	<div data-role="page" id="deposit-helper-1" class="deposit-helper">
+		<div data-role="header" class="nav">
+			<h1>Deposit</h1>
+			<a href="" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn" data-rel="back"></a>
+		</div>
+		<div data-role="content" class="content">
+			<div class="title">
+				<h1>Your very first deposit on Aire!</h1>
+			</div>
+			<div class="symbol"></div>
+			<div class="text">
+				<p>To use Aire, verifying your bank account or credit card is unnecessary. Aire uses Bitcoin to reduce the costs and friction involved in financial transaction. To deposit funds, you can send bitcoins to your Aire account.
+				</p>
+			</div>
+			<div class="action">
+				<a href="#deposit-helper-2" data-role="none" data-transition="slide">Next</a>
+			</div>
+		</div>
+	</div>
+	
+
+	<div data-role="page" id="deposit-helper-2" class="deposit-helper">
+		<div data-role="header" class="nav">
+			<h1>Deposit</h1>
+			<a href="" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn" data-rel="back"></a>
+		</div>
+		<div data-role="content" class="content">
+			<div class="title">
+				<p>Are you a Bitcoin user?</p>
+			</div>
+			<div class="action">
+				<a href="#deposit-helper-3" data-role="none" data-transition="slide">Yes</a>
+				<a href="#deposit-helper-4" data-role="none" data-transition="slide">No</a>
+			</div>
+			<div class="help">
+				<p>What is Bitcoin?</p>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="deposit-helper-3" class="deposit-helper">
+		<div data-role="header" class="nav">
+			<h1>Deposit</h1>
+			<a href="" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn" data-rel="back"></a>
+		</div>
+			<div data-role="content" class="content">
+				<div class="title">
+				<p>Connect your bitcoin wallet</p>
+			</div>
+			<div class="action">
+				<a href="#deposit-helper-5" data-role="none" data-transition="slide">Sign in to Coinbase</a>
+				<a href="#" data-role="none" data-transition="slide">Sign in to Korbit</a>
+				<a href="#" data-role="none" data-transition="slide">Use a different wallet</a>
+			</div>
+			<div class="help">
+				<a href="#deposit" data-role="none" data-transition="slide"><p>Skip and show me my bitcoin address</p></a>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="deposit-helper-4" class="deposit-helper">
+		<div data-role="header" class="nav">
+			<h1>Deposit</h1>
+			<a href="" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn" data-rel="back"></a>
+		</div>
+		<div data-role="content" class="content">
+			<div class="title">
+				<p>I don't own any bitcoin, where can I buy some?</p>
+			</div>
+			<div class="companies">
+				<p>Coinbase</p>
+				<p>Circle</p>
+				<p>Korbit</p>
+				<p>Expresscoin</p>
+				<p>See more ></p>
+			</div>
+			<div class="action">
+				<a href="#deposit-helper-3" data-role="none" data-transition="slide">Show me how to transfer<br> Bitcoin to Aire.</a>
+			</div>
+			<div class="help">
+				<p>What is Bitcoin?</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div data-role="page" id="deposit-helper-5" class="deposit-helper">
+		<div data-role="header" class="nav">
+			<h1>Deposit</h1>
+			<a href="" data-role="none" data-transition="slide" data-direction="reverse" class="ui-btn leftback-btn" data-rel="back"></a>
+		</div>
+		<div class="head">
+			<p>*Please note that whenever you send money through Aire, your money will be withdrawn from your Coinbase wallet you logged in.</p>
+		</div>
+
+		<div data-role="content" class="content">
+
+			<div class="title">
+				<p>Your Coinbase wallet balance</p>
+				<p>2.0383312 BTC</p>
+			</div>
+			<div class="action">
+				<a href="#deposit" data-role="none" data-transition="slide">Show my address</a>
+				<a href="" data-role="none" data-transition="slide">Use a different wallet</a>
+			</div>
+			<div class="help">
+				<p>Log out from Coinbase</p>
+			</div>
+		</div>
+	</div>
+
 	<!-- Profile-->
 	<div data-role="page" id="profile">
 		<div data-role="header" class="nav">
@@ -806,7 +920,7 @@
 			</div>
 			<div class="middle">
 				<div class="deposit">
-					<a href="#deposit" data-role="none" data-transition="slide" class="ui-btn">Deposit Funds</a>
+					<a href="#deposit-helper-1" data-role="none" data-transition="slide" class="ui-btn">Deposit Funds</a>
 				</div>
 				<div class="withdraw">
 					<a href="#withdraw" data-role="none" data-transition="slide" class="ui-btn">Withdraw Funds</a>

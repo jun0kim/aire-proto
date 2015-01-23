@@ -1842,6 +1842,181 @@ div #aire-pay-input #input-currency {
 	padding-left: 16px;
 }
 
+/* Deposit Helper*/
+
+.deposit-helper {
+	text-align: center;
+}
+
+.deposit-helper p {
+	margin: 15px 0;
+}
+.deposit-helper .nav {
+	border-bottom: 1px solid #cfcfcf;
+	background-color: #fff;
+}
+
+.deposit-helper .nav a {
+	left: 15px;
+	top: 15px;
+}
+
+.deposit-helper .nav h1 {
+	text-shadow: none;
+	padding-top: 15px;
+}
+
+.deposit-helper .action a {
+	display: block;
+	text-shadow: none;
+	height: 45px;
+	width: 260px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 21px;
+	padding-top: 20px;
+	font-weight: 300;
+}
+
+#deposit-helper-1 .content .title h1{
+	text-align: center;
+	font-size: 20px;
+	color: #33cc99;
+	text-shadow: none;
+	font-weight: 300;
+}
+
+#deposit-helper-1 .content .symbol {
+	width: 80px;
+	height: 109px;
+	background-image: url('../images/deposit-popup-img.png');
+	background-repeat: no-repeat;
+	background-size: 80px 109px;
+	margin: 30px auto;
+}
+
+#deposit-helper-1 .text {
+	width: 260px;
+	margin: 0 auto;
+	line-height: 19px;
+	text-align: center
+}
+
+#deposit-helper-1 .action {
+	margin-top: 10px;
+}
+
+#deposit-helper-1 .action a {
+	color: #fff;
+	background-color: #33cc99;
+}
+
+#deposit-helper-2 .title {
+	margin: 100px 0 40px;
+	font-size: 21px;
+}
+
+#deposit-helper-2 .action a:first-child {
+	color: #fff;
+	background-color: #33cc99;
+	margin-bottom: 15px;
+}
+
+#deposit-helper-2 .action a:last-child {
+	color: #fff;
+	background-color: #36aacb;
+}
+
+#deposit-helper-2 .help {
+	color: #999;
+	text-decoration: underline;
+}
+
+#deposit-helper-3 .title {
+	margin: 80px 0 40px;
+	font-size: 21px;
+}
+
+#deposit-helper-3 .action a {
+	color: #fff;
+	background-color: #33cc99;
+	margin-bottom: 15px;
+}
+
+#deposit-helper-3 .action a:last-child {
+	color: #fff;
+	background-color: #36aacb;
+}
+
+#deposit-helper-3 .help a {
+	color: #777;
+}
+
+#deposit-helper-4 .title {
+	margin: 40px auto;
+	font-size: 21px;
+	width: 290px;
+}
+#deposit-helper-4 .companies p {
+	font-size: 22px;
+	color: #666;
+}
+
+#deposit-helper-4 .companies {
+	margin-bottom: 10px;
+}
+
+#deposit-helper-4 .action a {
+	color: #fff;
+	background-color: #33cc99;
+	margin-bottom: 15px;
+	height: 65px;
+}
+
+#deposit-helper-4 .help {
+	color: #999;
+	text-decoration: underline;
+}
+
+#deposit-helper-5 .head {
+	background-color: #f6f6f6;
+	padding: 25px 30px;
+}
+
+#deposit-helper-5 .head p {
+	margin: 0;
+	color: #898989;
+	font-weight: 200;
+}
+
+#deposit-helper-5 .title {
+	margin: 40px auto;
+	font-size: 21px;
+	width: 290px;
+}
+
+#deposit-helper-5 .title p:first-child {
+	font-size: 19px;
+}
+
+#deposit-helper-5 .title p:last-child {
+	font-size: 27px;
+}
+
+#deposit-helper-5 .action a {
+	color: #fff;
+	background-color: #33cc99;
+	margin-bottom: 15px;
+}
+
+#deposit-helper-5 .action a:last-child {
+	color: #fff;
+	background-color: #36aacb;
+}
+
+#deposit-helper-5 .help {
+	color: #999;
+}
 
 /* Info Pages*/
 
