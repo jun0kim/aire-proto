@@ -2012,6 +2012,10 @@ div #aire-pay-input #input-currency {
 	line-height: 14px;
 }
 
+#deposit-helper-4 .companies {
+	margin: 0 auto;
+	width: 290px;
+}
 #deposit-helper-4 .companies p {
 	color: #9a9a9a;
 	text-align: left;
