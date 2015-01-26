@@ -16,6 +16,40 @@ $(function () {
 	var bPayFocused = false;
 	var inputElement = $('.sending-input');
 
+	// $("select").each(function() {
+	// 	$(this).on("focus", function () {
+	//   		$.mobile.zoom.disable(true);
+	//   	});
+	// });
+	// $("select").each(function() {
+	// 	$(this).on("blur", function () {
+	//   		$.mobile.zoom.disable(true);
+	//   	});
+	// });
+
+	// $("select").each(function() {
+	// 	$(this).on("focus", function () {
+	//   		$.mobile.zoom.disable(true);
+	//   	});
+	// });
+	// $("select").each(function() {
+	// 	$(this).on("blur", function () {
+	//   		$.mobile.zoom.disable(true);
+	//   	});
+	// });
+	$("select").on("focus", function () {
+	  $.mobile.zoom.enable(true);
+	});
+	$("select").on("blur", function () {
+	  $.mobile.zoom.enable(true);
+	});
+	$("input").on("focus", function () {
+	  $.mobile.zoom.disable(true);
+	});
+	$("input").on("blur", function () {
+	  $.mobile.zoom.enable(true);
+	});
+
 	transition_init();
 	history_link();
 	popup_init()
